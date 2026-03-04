@@ -4,7 +4,7 @@
   "title": "CNCF Skill Front-Matter",
   "description": "Schema for the YAML front-matter block in CNCF skill files",
   "type": "object",
-  "required": ["id", "title", "version", "domain", "cncf_requirement", "applies_to", "template_source"],
+  "required": ["id", "title", "description", "version", "domain", "cncf_requirement", "applies_to", "template_source"],
   "additionalProperties": false,
   "properties": {
     "id": {
@@ -15,6 +15,12 @@
     "title": {
       "type": "string",
       "minLength": 5
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 1024,
+      "description": "Third-person summary: what this skill does and when to use it. No first-person pronouns."
     },
     "version": {
       "type": "string",

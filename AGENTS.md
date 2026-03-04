@@ -46,3 +46,109 @@ scripts/validate_schema.py — sole tooling artifact; runs locally and in CI
 ```bash
 just check   # validates all skill front-matter against the schema
 ```
+
+---
+
+## Skill authoring requirements
+
+Every `SKILL.md` must have a YAML front-matter block and a body. Both are validated
+by `just check`. A skill that fails validation will not be merged.
+
+### Required front-matter fields
+
+```yaml
+---
+id: kebab-case-id          # stable identifier; leading underscore allowed for meta-skills
+title: "Human-readable title"
+description: "Third-person summary of what the skill does and when an agent should invoke it. No first-person pronouns (I, You). Between 20 and 1024 characters."
+version: "1.0.0"           # semantic version
+domain: contribution       # one of: contribution | governance | security | lifecycle
+cncf_requirement: required # one of: required | encouraged | optional
+applies_to:                # one or more of: sandbox | incubating | graduated
+  - sandbox
+template_source: "https://..." # canonical CNCF template URL
+---
+```
+
+Optional fields: `how_to_guide` (URI), `tags` (string array), `mcp_servers` (see schema).
+
+### `description` field rules (enforced by validator)
+
+The `description` field is used by agents to decide whether to invoke this skill.
+Write it as if explaining the skill to another agent in one or two sentences.
+
+| Rule | Detail |
+|---|---|
+| Third-person only | Do not start with "I" or "You". Write "Creates…", "Guides…", "Audits…", etc. |
+| What + when | State what the skill does AND when an agent should use it. |
+| Length | 20–1024 characters. |
+| No time-sensitive content | Do not reference dates, version numbers, or deadlines. |
+
+**Good example:**
+```
+Creates or updates SECURITY.md defining the vulnerability reporting process,
+disclosure timeline, and supported versions. Use when a CNCF project is
+missing a security policy or needs to update reporting instructions.
+```
+
+**Bad examples:**
+```
+# Too vague — no "when":
+"Handles security policies."
+
+# First-person — rejected by validator:
+"I help you create a SECURITY.md file."
+
+# Time-sensitive — will rot:
+"Use this in 2024 when applying for graduation."
+```
+
+### Body rules
+
+| Rule | Detail |
+|---|---|
+| Max 500 lines | Keeps skills context-efficient for agents with limited windows. |
+| Required sections (in order) | See below. |
+
+### Required body sections (in order)
+
+```markdown
+## When to use this skill
+<positive conditions — when the agent SHOULD invoke this>
+
+Do NOT use when:
+<negative conditions — when the agent should NOT invoke this>
+
+## What this skill does
+<concise description of the outputs and actions>
+
+## Steps
+1. Step one
+2. Step two
+...
+
+## Validation checklist
+- [ ] Item one
+- [ ] Item two
+
+## Common mistakes
+**Mistake title** — explanation of the mistake and how to avoid it.
+```
+
+All six sections must be present and in the order shown above.
+The "Do NOT use when:" block is inline under the `## When to use this skill` heading,
+not a separate heading.
+
+### Checklist for new skills
+
+Before running `just check`, confirm:
+
+- [ ] `id` is kebab-case, unique across all skills in `skills/`
+- [ ] `description` is third-person, 20–1024 chars, includes what + when
+- [ ] `domain` and `cncf_requirement` use the allowed enum values
+- [ ] `applies_to` lists at least one maturity level
+- [ ] `template_source` is a valid HTTPS URI
+- [ ] Body has all six required sections in the correct order
+- [ ] Body is ≤500 lines
+- [ ] `just check` passes: 0 errors
+
