@@ -1,0 +1,12 @@
+# Lychee link checker configuration
+timeout = 20
+max_retries = 3
+exclude_loopback = true
+
+# GitHub raw URLs are often rate-limited in CI — accept 429 as non-failure
+accept = [200, 429]
+
+# Skip internal anchors
+exclude = [
+  "^#",
+]
