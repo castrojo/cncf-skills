@@ -1,7 +1,7 @@
 ---
 id: security-policy
 title: "Create or Update a SECURITY.md (Security Policy)"
-version: "1.0.0"
+version: "1.1.0"
 domain: security
 cncf_requirement: required
 applies_to:
@@ -84,3 +84,24 @@ Also guides setup of GitHub private vulnerability reporting and OpenSSF security
 - **No timezone specified in response timeline** — all dates in coordinated disclosure must use UTC; a timezone-ambiguous disclosure date causes confusion with downstream distributors
 - **Supported versions table with no EOL criteria** — reviewers will ask "how does a version reach EOL?"; define the criteria or link to a RELEASES.md that does
 - **GitHub Private Vulnerability Reporting not configured** — reporters will try it even if not documented; configure it in repo settings before publishing SECURITY.md
+
+## Graduation readiness
+
+Graduation criteria satisfied (from the CNCF graduation application):
+- **Clearly defined and discoverable process to report security issues** (Required)
+- **Achieve the Open Source Security Foundation (OpenSSF) Best Practices passing badge** (Required — hard gate)
+- **Achieving OpenSSF Best Practices silver or gold badge** (Suggested — strong positive signal)
+- **Enforcing Access Control Rules to secure the code base against attacks** (Required)
+- **Third Party Security Review — moderate and low findings planned/tracked for resolution** (Required)
+
+What graduation reviewers specifically check:
+
+1. **OpenSSF Best Practices passing badge — hard graduation gate** — this is non-negotiable. The badge URL must appear in README.md. Apply at `https://bestpractices.coreinfrastructure.org` well before the graduation application; the review process to earn the badge takes time. Budget 2–4 weeks for a first-time application on a mature project.
+
+2. **Scorecards score on CLOMonitor** — the CNCF CLOMonitor dashboard (`https://clomonitor.io`) aggregates OpenSSF Scorecards data. Graduation reviewers check this dashboard. A Scorecards score below 5.0 will generate questions. The Scorecards action added in Step 6 feeds this dashboard automatically once it has been running for at least one workflow cycle.
+
+3. **Branch protection rules** — the "Enforcing Access Control Rules" graduation checkbox specifically asks about this. Verify in repository settings: require PR reviews before merging, require status checks to pass, do not allow bypassing required checks, restrict direct pushes to the default branch.
+
+4. **2FA enforcement on the GitHub org** — this is the other half of the access control checkbox. Enable it at `https://github.com/organizations/<org>/settings/security`. Any maintainer without 2FA enabled will be removed from the org when this is enforced — warn maintainers before enabling.
+
+5. **Third Party Security Review tracking** — graduation requires that moderate and low findings from any TPR are "planned/tracked for resolution." Create GitHub issues for each finding category, link them in the graduation application, and note their target resolution milestone. Untracked findings are a common reason graduation applications are deferred.

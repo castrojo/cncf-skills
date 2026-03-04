@@ -1,7 +1,7 @@
 ---
 id: contributing-guide
 title: "Create or Update a CONTRIBUTING.md"
-version: "1.0.0"
+version: "1.1.0"
 domain: contribution
 cncf_requirement: required
 applies_to:
@@ -105,3 +105,20 @@ meeting schedule, and DCO/CLA policy.
 - **PR Lifecycle section left as placeholder** — this is the most commonly skipped section and the most visible gap to CNCF reviewers; it must describe the project's actual process
 - **Wrong org/repo slug in label URLs** — every label URL contains the org and repo name; verify both match the actual repository
 - **Not running the TODO grep before the PR** — `grep -c 'TODO' CONTRIBUTING.md` must return 0; "looked fine" is not a verification step
+
+## Graduation readiness
+
+Graduation criteria satisfied (from the CNCF graduation application):
+- **Clearly defined and discoverable process to submit issues or changes** (Required)
+- **Documentation of how to contribute, with increasing detail as the project matures** (Required)
+- **Project must have at least one public communications channel** (Required)
+
+What graduation reviewers specifically check beyond a filled-in template:
+
+1. **Communications channel named explicitly** — the channel must be a real link (Slack workspace URL + channel name, or mailing list archive URL), not generic text. Reviewers paste the link to verify it is public and active.
+
+2. **Meeting schedule linked to the CNCF calendar** — the graduation application asks for "up-to-date public meeting schedulers and/or integration with CNCF calendar." The meeting link in CONTRIBUTING.md is the natural place to satisfy this. Link to `https://www.cncf.io/calendar` or the project's specific calendar entry.
+
+3. **Development setup section current** — reviewers clone the repo and run the setup instructions. A section that was accurate at sandbox stage but drifted since will fail this check silently. Verify the build/test commands produce the expected output immediately before submitting the graduation application.
+
+4. **Increasing detail signal** — graduation reviewers compare the CONTRIBUTING.md against what it looked like at incubation. Projects where the file is identical signal governance stagnation. Add a changelog note or date at the top, or simply ensure new sections (PR checklist, security-aware review guidance) were added post-incubation.

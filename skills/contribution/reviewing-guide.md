@@ -1,7 +1,7 @@
 ---
 id: reviewing-guide
 title: "Create or Update a REVIEWING.md"
-version: "1.0.0"
+version: "1.1.0"
 domain: contribution
 cncf_requirement: encouraged
 applies_to:
@@ -79,3 +79,17 @@ project-specific reviewer roles, values, process steps, and a review checklist.
 - **Emergency merge policy left blank** — this is the section most likely to be needed on a Friday and least likely to have been written; it must exist before it is needed
 - **Approval count set higher than active maintainer count** — requiring 3 approvals with 2 active maintainers stalls every PR; set a count the team can actually meet
 - **"Can a maintainer merge their own PR?" left unanswered** — this is a common source of conflict; the answer must be explicit in the Process section
+
+## Graduation readiness
+
+Graduation criteria satisfied (from the CNCF graduation application):
+- **Documentation of how to contribute, with increasing detail as the project matures** (Required) — a REVIEWING.md that did not exist at sandbox stage is direct evidence of maturity progression
+- **Governance is up to date with actual project activities** (Required) — the review process must reflect how reviews actually happen, not how they were intended to happen at project inception
+
+What graduation reviewers specifically check:
+
+1. **Security-aware review checklist** — the graduation application's Third Party Security Review section notes that findings often include recommendations to "improve project contribution guide [by] providing a PR review guide to look for memory leaks and other vulnerabilities the project may be susceptible to by design or language choice." Add at least one security-focused item to the review checklist (e.g., "No new unsafe memory patterns introduced", "Dependencies from trusted sources only", "No secrets or credentials in diff").
+
+2. **Evidence the process is followed** — reviewers look at recent PRs to see if review comments match the stated values and process. A REVIEWING.md that says "kindness first" but has a history of harsh review comments is a governance red flag. If the existing PR history does not match, update the document to reflect reality or update the practice — but not both unless the change is real.
+
+3. **Emergency merge process** — graduation reviewers verify that the project can respond to a critical CVE without its governance process becoming a bottleneck. The emergency merge policy is the signal that the project has thought about this.

@@ -1,7 +1,7 @@
 ---
 id: maintainers-list
 title: "Create or Update a MAINTAINERS.md"
-version: "1.0.0"
+version: "1.1.0"
 domain: governance
 cncf_requirement: required
 applies_to:
@@ -72,3 +72,20 @@ areas of ownership.
 - **Employer listed as "Independent" without verification** — ask the maintainer directly; "independent" vs. employed affects CNCF's vendor-neutrality assessment for incubation and graduation
 - **Forgetting the CNCF foundation CSV after initial creation** — CNCF staff cannot include the project in official maintainer counts until `project-maintainers.csv` is updated; this is the step most often skipped
 - **MAINTAINERS.md drifting from OWNERS root approvers** — the two must stay in sync; a mismatch is embarrassing during due diligence and easy to prevent with a reminder in the PR template
+
+## Graduation readiness
+
+Graduation criteria satisfied (from the CNCF graduation application):
+- **Document complete list of current maintainers, including names, contact information, domain of responsibility, and affiliation** (Required)
+- **Project maintainers from at least 2 organizations that demonstrates survivability** (Required — hard gate)
+- **Code and Doc ownership in GitHub and elsewhere matches documented governance roles** (Required)
+
+What graduation reviewers specifically check:
+
+1. **Multi-organization affiliation — hard gate** — graduation cannot proceed if all maintainers are employed by the same organization. Count distinct employer affiliations in the affiliation column before submitting the application. "Independent" is not a second organization; it means one person is not affiliated with the primary employer, but the project still lacks organizational survivability. The CNCF graduation criterion is explicit: maintainers from "at least 2 organizations."
+
+2. **Affiliation accuracy** — TOC reviewers verify affiliations against LinkedIn and public records. An outdated affiliation (maintainer changed jobs, still listed at the old employer) is a common due-diligence finding. Audit all entries against current employment immediately before submitting the graduation application.
+
+3. **Domain of responsibility column** — at sandbox, this column is often omitted. At graduation, reviewers want to understand who is responsible for what. If the project has grown to cover multiple components or repos, add a "Domain" column mapping each maintainer to their area(s) of ownership.
+
+4. **CNCF foundation CSV** — the CNCF foundation tracks maintainer counts in `https://github.com/cncf/foundation/blob/master/project-maintainers.csv`. Verify this is current before the graduation application is reviewed; stale data there will be flagged.

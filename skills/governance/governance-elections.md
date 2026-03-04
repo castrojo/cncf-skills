@@ -1,7 +1,7 @@
 ---
 id: governance-elections
 title: "Set Up Elections-Based Governance (GOVERNANCE-elections.md)"
-version: "1.0.0"
+version: "1.1.0"
 domain: governance
 cncf_requirement: encouraged
 applies_to:
@@ -69,3 +69,20 @@ maintainer seats, including eligibility, nomination, voting method, and term len
 - **No quorum defined** — an election where 1 person votes is not legitimate; set a minimum participation threshold before the election starts
 - **Eligibility set too broadly or too narrowly** — all GitHub users who starred the repo is too broad; existing maintainers only is too narrow; the CNCF pattern is contributors with merged PRs in the past 12 months
 - **Mid-term vacancy left unaddressed** — maintainers change jobs and lose interest; the policy for filling a vacated seat mid-term must exist before it is needed
+
+## Graduation readiness
+
+Graduation criteria satisfied (from the CNCF graduation application):
+- **Governance clearly documents vendor-neutrality of project direction** (Required)
+- **Document how the project makes decisions on leadership roles, contribution acceptance, requests to the CNCF, and changes to governance or project goals** (Required)
+- **Governance has continuously been iterated upon by the project as a result of their experience** (Suggested — strong positive signal)
+
+What graduation reviewers specifically check:
+
+1. **Vendor-neutrality in election eligibility** — if eligibility criteria (voting rights, candidacy) can be structured to favor contributors from a dominant employer (e.g., requiring N merged PRs in a component where only one company contributes), reviewers will flag it. Eligibility must be based on project-neutral criteria: total contribution activity, time in project, mentorship provided — not component-specific activity.
+
+2. **Evidence of governance evolution** — the graduation application specifically asks whether "governance has continuously been iterated upon." Link the git history of the governance document and highlight changes made after incubation. A GOVERNANCE-elections.md that has not been touched since sandbox acceptance signals stagnation to reviewers.
+
+3. **Election actually conducted** — an elections governance document that has never been exercised is weaker evidence than one that has. If the project has held at least one election cycle, note the date and outcome in the graduation application. If no election has occurred because no seats were contested, document that explicitly — it is acceptable but must be stated.
+
+4. **Cross-link vendor-neutrality policy** — the CNCF vendor-neutrality guide is at `https://contribute.cncf.io/maintainers/community/vendor-neutrality/`. Reference it explicitly in the governance document; reviewers verify this cross-link exists.

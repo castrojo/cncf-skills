@@ -1,7 +1,7 @@
 ---
 id: governance-maintainer-council
 title: "Set Up Maintainer Council Governance (GOVERNANCE-maintainer.md)"
-version: "1.0.0"
+version: "1.1.0"
 domain: governance
 cncf_requirement: encouraged
 applies_to:
@@ -67,3 +67,20 @@ decision-making process, adding/removing maintainers, and conflict resolution.
 - **Lazy consensus defined without a waiting period** — "silence = approval" is meaningless without a number; the standard is 5-7 business days; state it explicitly
 - **Tie-breaking mechanism omitted** — ties happen; the policy must say who resolves them before it is needed in a live conflict (e.g., longest-tenured maintainer, random selection)
 - **Self-merge after self-approval allowed** — at minimum require one other maintainer's approval even for maintainers; unchecked self-merge is a common code-of-conduct and security issue source
+
+## Graduation readiness
+
+Graduation criteria satisfied (from the CNCF graduation application):
+- **Governance clearly documents vendor-neutrality of project direction** (Required)
+- **Document how the project makes decisions on leadership roles, contribution acceptance, requests to the CNCF, and changes to governance or project goals** (Required)
+- **Governance is up to date with actual project activities, including any meetings, elections, leadership, or approval processes** (Required)
+
+What graduation reviewers specifically check:
+
+1. **Explicit vendor-neutrality statement** — the graduation application has a dedicated checkbox: "All project metadata and resources are vendor-neutral." The governance document must contain an explicit statement that no single company controls project direction. The CNCF vendor-neutrality guide (`https://contribute.cncf.io/maintainers/community/vendor-neutrality/`) defines what this means. Add a "Vendor Neutrality" section to the governance document that cross-links this guide and asserts the project's compliance.
+
+2. **Decision-making process covers CNCF-facing decisions** — graduation reviewers ask how the project decides things like: applying to graduate, accepting CNCF funding for an event, changing the project charter. The governance document must address not just code decisions but project-level decisions that affect the project's relationship with CNCF.
+
+3. **Governance reflects actual current practice** — a common graduation finding is that the governance document was written at sandbox, adopted maintainer council governance, and then the project grew to 15+ contributors but the governance was never updated. Before applying, read every section and verify it describes how decisions actually happen today, not how they were intended to happen originally.
+
+4. **Meeting cadence documented** — graduation asks for "up-to-date public meeting schedulers." If the maintainer council meets regularly, document the cadence and link to the calendar entry or meeting notes archive. This is often missing from governance docs that were written before regular meetings were established.

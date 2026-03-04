@@ -1,7 +1,7 @@
 ---
 id: embargo
 title: "Draft an Embargo Notice for a Security Release"
-version: "1.0.0"
+version: "1.1.0"
 domain: security
 cncf_requirement: optional
 applies_to:
@@ -65,3 +65,14 @@ distributors list before the public disclosure date.
 - **Vulnerability summary contains exploitable detail** — write the summary as if it could be leaked; severity + component + CVE ID is sufficient; no proof-of-concept details or reproduction steps
 - **No receipt confirmation from distributors before the embargo lifts** — silence is not consent; follow up with non-respondents at 24h before the disclosure date
 - **Disclosure date/time in local timezone** — every distributor operates in a different timezone; use UTC for the public disclosure date and time, always
+
+## Graduation readiness
+
+Graduation criteria satisfied (from the CNCF graduation application):
+- **History of regular, quality releases** (Required) — security releases handled through a documented embargo process are direct evidence of release quality and process maturity
+
+What graduation reviewers specifically check:
+
+1. **Evidence of process execution** — graduation reviewers look for whether the security response process has been used in practice, not just documented. If the project has issued one or more security releases, note them in the graduation application. The existence of a sent embargo notice (even if the CVE details are redacted) is evidence that the process works end-to-end.
+
+2. **GitHub Security Advisory published** — when the embargo lifts, the public disclosure should appear as a GitHub Security Advisory in the repository. This feeds CVE databases automatically and is indexed by security scanners. Graduation reviewers may check whether past security releases have published advisories; missing advisories for known CVEs are a finding.
