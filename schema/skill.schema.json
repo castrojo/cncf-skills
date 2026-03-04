@@ -9,8 +9,8 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9-]*$",
-      "description": "Stable kebab-case identifier"
+      "pattern": "^_?[a-z][a-z0-9-]*$",
+      "description": "Stable kebab-case identifier (leading underscore allowed for meta-skills)"
     },
     "title": {
       "type": "string",
