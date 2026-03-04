@@ -1,6 +1,7 @@
 ---
 id: reviewing-guide
 title: "Create or Update a REVIEWING.md"
+description: "Creates or updates REVIEWING.md documenting how code reviews are conducted and what reviewers are expected to check. Use when a CNCF project wants to standardize review expectations and document the review process."
 version: "2.0.0"
 domain: contribution
 cncf_requirement: encouraged

@@ -1,6 +1,7 @@
 ---
 id: releases
 title: "Document the Release Process (RELEASES.md)"
+description: "Creates or updates RELEASES.md documenting the release process, versioning policy, and release cadence. Use when a CNCF project needs to formalize its release process for transparency and contributor onboarding."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

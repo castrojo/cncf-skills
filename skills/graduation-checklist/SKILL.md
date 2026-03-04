@@ -1,6 +1,7 @@
 ---
 id: graduation-checklist
 title: "CNCF Graduation Readiness Checklist"
+description: "Audits a CNCF project against all graduation Due Diligence criteria and identifies gaps. Use when a project is preparing to apply for CNCF graduation or wants a readiness assessment before submitting."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: optional

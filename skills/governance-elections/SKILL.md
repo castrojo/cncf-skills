@@ -1,6 +1,7 @@
 ---
 id: governance-elections
 title: "Set Up Elections-Based Governance (GOVERNANCE-elections.md)"
+description: "Creates or updates elections-based GOVERNANCE.md defining how maintainers are elected, terms, and removal process. Use when a CNCF project uses an election model for leadership and needs formal governance documentation."
 version: "2.0.0"
 domain: governance
 cncf_requirement: encouraged

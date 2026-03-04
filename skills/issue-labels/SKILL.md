@@ -1,6 +1,7 @@
 ---
 id: issue-labels
 title: "Set Up Issue Labels for New Contributors"
+description: "Sets up GitHub issue labels for new contributor onboarding, including good-first-issue and help-wanted labels. Use when a CNCF project wants to improve contributor discoverability and welcoming."
 version: "2.0.0"
 domain: contribution
 cncf_requirement: encouraged

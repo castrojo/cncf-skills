@@ -1,6 +1,7 @@
 ---
 id: openssf-scorecards
 title: "Set Up the OpenSSF Scorecard GitHub Action"
+description: "Sets up the OpenSSF Scorecard GitHub Action for automated supply-chain security scoring. Use when a CNCF project needs to configure continuous security posture measurement."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

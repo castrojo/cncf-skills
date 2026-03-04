@@ -1,6 +1,7 @@
 ---
 id: security-embargo
 title: "Set Up Embargo Policy and Draft Embargo Notices"
+description: "Sets up an embargo policy document and draft notice templates for coordinated vulnerability disclosure. Use when a CNCF project needs pre-disclosure coordination agreements and embargo notification templates."
 version: "2.0.0"
 domain: security
 cncf_requirement: optional

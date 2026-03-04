@@ -1,6 +1,7 @@
 ---
 id: contributing-guide
 title: "Create or Update a CONTRIBUTING.md"
+description: "Creates or updates CONTRIBUTING.md using the CNCF template, replacing all TODO markers with project-specific content. Use when a CNCF project is missing a contributing guide or has unfilled placeholder text."
 version: "2.0.0"
 domain: contribution
 cncf_requirement: required

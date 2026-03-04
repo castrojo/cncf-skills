@@ -1,6 +1,7 @@
 ---
 id: architecture
 title: "Create or Update an ARCHITECTURE.md"
+description: "Creates or updates ARCHITECTURE.md documenting the project's design, components, and technical decisions. Use when a CNCF project lacks an architecture document or needs to update its technical overview."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

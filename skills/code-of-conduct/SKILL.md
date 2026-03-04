@@ -1,6 +1,7 @@
 ---
 id: code-of-conduct
 title: "Adopt the CNCF Code of Conduct"
+description: "Adopts the CNCF Code of Conduct by adding a reference or embedding the canonical text. Use when a CNCF project is missing a code of conduct or needs to align with the official CNCF standard."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

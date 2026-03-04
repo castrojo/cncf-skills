@@ -1,6 +1,7 @@
 ---
 id: contributor-ladder
 title: "Create or Update a CONTRIBUTOR_LADDER.md"
+description: "Creates or updates CONTRIBUTOR_LADDER.md defining roles, responsibilities, and advancement paths from contributor to maintainer. Use when a CNCF project wants to formalize how contributors grow and earn commit rights."
 version: "2.0.0"
 domain: governance
 cncf_requirement: encouraged
