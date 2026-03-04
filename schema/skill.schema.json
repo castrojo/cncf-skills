@@ -50,6 +50,19 @@
       "items": {
         "type": "string"
       }
+    },
+    "mcp_servers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "id":          { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+          "description": { "type": "string", "minLength": 5 },
+          "url":         { "type": "string", "format": "uri" }
+        }
+      }
     }
   }
 }
