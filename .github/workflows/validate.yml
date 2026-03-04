@@ -32,6 +32,14 @@ jobs:
       - name: Smoke test Goose adapter
         run: bash adapters/goose/generate.sh
 
+      - name: Claude Code adapter smoke test
+        if: ${{ hashFiles('adapters/claude-code/generate.sh') != '' }}
+        run: bash adapters/claude-code/generate.sh
+
+      - name: GitHub Copilot adapter smoke test
+        if: ${{ hashFiles('adapters/github-copilot/generate.sh') != '' }}
+        run: bash adapters/github-copilot/generate.sh
+
   links:
     name: Link Check
     runs-on: ubuntu-latest
@@ -41,5 +49,5 @@ jobs:
       - name: Check links in skill files
         uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # v2
         with:
-          args: --config .lychee.toml skills/**/*.md
+          args: --config .lychee.toml skills/*/SKILL.md skills/*/references/*.md
           fail: true
