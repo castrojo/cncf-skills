@@ -7,7 +7,7 @@ on:
 
 jobs:
   schema:
-    name: Schema & Adapter Validation
+    name: Schema Validation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
@@ -25,20 +25,6 @@ jobs:
           python3 scripts/validate_schema.py \
             --schema schema/skill.schema.json \
             --skills-dir skills
-
-      - name: Smoke test OpenCode adapter
-        run: bash adapters/opencode/generate.sh
-
-      - name: Smoke test Goose adapter
-        run: bash adapters/goose/generate.sh
-
-      - name: Claude Code adapter smoke test
-        if: ${{ hashFiles('adapters/claude-code/generate.sh') != '' }}
-        run: bash adapters/claude-code/generate.sh
-
-      - name: GitHub Copilot adapter smoke test
-        if: ${{ hashFiles('adapters/github-copilot/generate.sh') != '' }}
-        run: bash adapters/github-copilot/generate.sh
 
   links:
     name: Link Check

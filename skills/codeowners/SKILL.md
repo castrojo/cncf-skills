@@ -1,6 +1,7 @@
 ---
 id: codeowners
 title: "Create or Update a CODEOWNERS File"
+description: "Creates or updates CODEOWNERS to assign code review ownership by directory or file pattern. Use when a CNCF project needs to define who must approve changes to specific parts of the codebase."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

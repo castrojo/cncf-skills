@@ -1,6 +1,7 @@
 ---
 id: governance-maintainer-council
 title: "Set Up Maintainer Council Governance (GOVERNANCE-maintainer.md)"
+description: "Creates or updates maintainer-council GOVERNANCE.md defining council structure, quorum rules, and decision-making process. Use when a CNCF project uses a maintainer council model for governance."
 version: "2.0.0"
 domain: governance
 cncf_requirement: encouraged

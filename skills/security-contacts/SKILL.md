@@ -1,6 +1,7 @@
 ---
 id: security-contacts
 title: "Create or Update SECURITY_CONTACTS"
+description: "Creates or updates SECURITY_CONTACTS listing the people responsible for receiving and triaging vulnerability reports. Use when a CNCF project needs to publish who handles security disclosures."
 version: "2.0.0"
 domain: security
 cncf_requirement: required

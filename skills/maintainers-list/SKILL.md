@@ -1,6 +1,7 @@
 ---
 id: maintainers-list
 title: "Create or Update a MAINTAINERS.md"
+description: "Creates or updates MAINTAINERS.md listing current maintainers with GitHub handles, affiliations, and voting rights. Use when a CNCF project needs to document project ownership or the maintainer list has changed."
 version: "2.0.0"
 domain: governance
 cncf_requirement: required

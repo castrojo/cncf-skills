@@ -1,6 +1,7 @@
 ---
 id: security-self-assessment
 title: "Complete a TAG Security Self-Assessment"
+description: "Completes the CNCF TAG Security self-assessment questionnaire documenting a project's security posture, threat model, and practices. Use when preparing for a TAG Security review or graduation application."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

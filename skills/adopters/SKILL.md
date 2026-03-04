@@ -1,6 +1,7 @@
 ---
 id: adopters
 title: "Create or Update an ADOPTERS.md"
+description: "Creates or updates ADOPTERS.md listing organizations using the project in production. Use when a CNCF project needs to document adopters for sandbox, incubating, or graduated status requirements."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

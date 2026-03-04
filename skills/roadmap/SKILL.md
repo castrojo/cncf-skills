@@ -1,6 +1,7 @@
 ---
 id: roadmap
 title: "Create or Update a Public ROADMAP.md"
+description: "Creates or updates ROADMAP.md publishing the project's planned direction, milestones, and timeline. Use when a CNCF project needs a public roadmap required for sandbox and above, or when the existing roadmap is stale."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

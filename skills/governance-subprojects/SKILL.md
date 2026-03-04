@@ -1,6 +1,7 @@
 ---
 id: governance-subprojects
 title: "Document Subprojects in Governance (GOVERNANCE-subprojects.md)"
+description: "Documents subprojects in the project's governance file, defining ownership, scope, and leadership per subproject. Use when a CNCF project has multiple loosely coupled components that each need formal ownership documented."
 version: "2.0.0"
 domain: governance
 cncf_requirement: encouraged

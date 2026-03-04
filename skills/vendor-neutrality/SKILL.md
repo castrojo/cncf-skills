@@ -1,6 +1,7 @@
 ---
 id: vendor-neutrality
 title: "Add a Vendor-Neutral Governance Statement"
+description: "Adds a vendor-neutral governance statement ensuring the project is not controlled by a single vendor. Use when a CNCF project needs to assert vendor-neutral governance for compliance with CNCF sandbox requirements."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

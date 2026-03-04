@@ -1,6 +1,7 @@
 ---
 id: openssf-badge
 title: "Earn the OpenSSF Best Practices Badge"
+description: "Guides a project through earning the OpenSSF Best Practices badge by completing the criteria checklist. Use when a CNCF project is applying for the badge for the first time or renewing an expired badge required for graduation."
 version: "2.0.0"
 domain: lifecycle
 cncf_requirement: required

@@ -1,6 +1,7 @@
 ---
 id: incident-response
 title: "Create or Update an Incident Response Plan"
+description: "Creates or updates an incident response plan covering detection, triage, communication, and post-incident review. Use when a CNCF project needs a documented process for handling security incidents or service outages."
 version: "2.0.0"
 domain: security
 cncf_requirement: encouraged

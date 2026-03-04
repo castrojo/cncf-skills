@@ -1,6 +1,7 @@
 ---
 id: security-policy
 title: "Create or Update a SECURITY.md (Security Policy)"
+description: "Creates or updates SECURITY.md defining the vulnerability reporting process, disclosure timeline, and supported versions. Use when a CNCF project is missing a security policy or needs to update reporting instructions."
 version: "2.0.0"
 domain: security
 cncf_requirement: required
