@@ -8,7 +8,6 @@ creating, updating, or auditing a required CNCF community health file.
 ## Structure
 
 - `skills/` — one Markdown file per skill, organized by domain
-- `adapters/` — per-tool generators that produce native artifacts from skill files
 - `schema/` — JSON Schema for skill front-matter validation
 
 ## Domains
@@ -22,23 +21,10 @@ creating, updating, or auditing a required CNCF community health file.
 
 ## Using a Skill
 
-### OpenCode
+Skills are plain markdown files. Point your agent tool at `skills/*/SKILL.md` and
+read them directly — no build step, no generation, no pre-processing required.
 
-Run the adapter to generate OpenCode-native artifacts:
-
-```bash
-bash adapters/opencode/generate.sh
-```
-
-Then install the output into your project's `.opencode/skills/` directory.
-
-### Goose
-
-```bash
-bash adapters/goose/generate.sh
-```
-
-Then reference the generated `toolkit.yaml` in your Goose configuration.
+See [adapters/README.md](adapters/README.md) for tool-specific instructions.
 
 ## Contributing
 

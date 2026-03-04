@@ -2,17 +2,15 @@
 
 ## Adding a New Skill
 
-1. Choose the correct domain directory: `skills/contribution/`, `skills/governance/`,
-   `skills/security/`, or `skills/lifecycle/`
-2. Copy the template below into a new `kebab-case-name.md` file
-3. Fill in all front-matter fields — see `schema/skill.schema.json` for the contract
-4. Write the Markdown body following the required sections
-5. Run `bash adapters/opencode/generate.sh` locally to verify your skill parses cleanly
-6. Open a PR — CI will validate schema, links, and adapter smoke tests
+1. Create `skills/<id>/SKILL.md` with valid YAML front-matter + body
+2. Fill in all front-matter fields — see `schema/skill.schema.json` for the contract
+3. Write the Markdown body following the required sections
+4. Run `just check` to verify the skill parses cleanly
+5. Open a PR — CI will validate schema and links
 
 ## Skill Template
 
-See `skills/contribution/contributing-guide.md` as a reference implementation.
+See `skills/contributing-guide/SKILL.md` as a reference implementation.
 
 ## Front-matter Fields
 
@@ -32,8 +30,8 @@ See `skills/contribution/contributing-guide.md` as a reference implementation.
 
 - **Non-breaking** (better wording, additional guidance): bump patch version
 - **New required step**: bump minor version
-- **Removed or renamed field / changed step contract**: bump major version, update adapter mapping
+- **Removed or renamed field / changed step contract**: bump major version
 
-## Adding a New Tool Adapter
+## Adding Support for a New Agent Tool
 
-See `adapters/README.md` for the full adapter contract.
+Add one section to `adapters/README.md`. Nothing else.

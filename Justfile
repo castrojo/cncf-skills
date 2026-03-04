@@ -3,11 +3,6 @@ set shell := ["bash", "-euo", "pipefail", "-c"]
 default:
     just --list
 
-# Validate all skills against JSON Schema and check links
+# Validate all skills against JSON Schema
 check:
-    bash scripts/validate.sh
-
-# Run all adapter generators
-generate:
-    bash adapters/opencode/generate.sh
-    bash adapters/goose/generate.sh
+    python3 scripts/validate_schema.py --schema schema/skill.schema.json --skills-dir skills

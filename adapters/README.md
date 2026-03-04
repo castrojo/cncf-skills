@@ -1,57 +1,43 @@
-# Adapter Contract
+# Using cncf-skills With Your Agent Tool
 
-An adapter transforms the tool-agnostic skill files in `skills/` into
-artifacts native to a specific AI agent tool.
+> **Design principle:** This repo is optimized for context size and agent consumption.
+> Skills are plain markdown files in `skills/*/SKILL.md`. There are no build steps,
+> no generated outputs, and no pre-processing. Agents read skills directly.
+> Any tool-specific configuration (YAML toolkits, instruction files, config blocks)
+> is out of scope — agents generate those on demand from the source files.
 
-## Contract
+## How skills are structured
 
-An adapter MUST:
+Each skill lives at `skills/<id>/SKILL.md` with YAML front-matter followed by a
+markdown body. The front-matter fields (`id`, `title`, `domain`, `cncf_requirement`,
+`applies_to`, `tags`) are machine-readable metadata. The body is the agent instruction.
 
-1. Read all `skills/**/*.md` files from the repository root
-2. Parse the YAML front-matter block (delimited by `---`)
-3. Use the Markdown body (everything after the closing `---`) as the instruction content
-4. Write output artifacts to `adapters/<tool>/output/` (gitignored)
-5. Exit 0 on success, non-zero on any parse or generation error
-6. Be idempotent — running twice produces the same output
+Some skills include reference templates under `skills/<id>/references/`.
 
-An adapter MUST NOT:
-- Modify any file in `skills/`
-- Commit generated output to version control
-- Require network access
+## OpenCode
 
-## Input: Skill File Structure
+Point your `opencode.json` at the `skills/` directory. Each `SKILL.md` is loaded
+as a named skill. Use the `Skill` tool by name (e.g., `contributing-guide`) to invoke one.
 
-```
----
-id: contributing-guide
-title: "Create or Update a CONTRIBUTING.md"
-version: "1.0.0"
-domain: contribution
-cncf_requirement: required
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/CONTRIBUTING.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/templates/contributing"
-tags:
-  - onboarding
----
+## Claude Code / claude-code
 
-# Markdown body starts here
-...
-```
+Add the `skills/` directory to your `CLAUDE.md` context, or reference individual
+`skills/<id>/SKILL.md` files directly using the Read tool. The `_index` skill
+(`skills/_index/SKILL.md`) lists all available skills and their domains.
 
-## Available Adapters
+## Goose
 
-| Tool | Directory | Output format |
-|---|---|---|
-| OpenCode | `adapters/opencode/` | `SKILL.md` + `opencode.json` per skill |
-| Goose | `adapters/goose/` | `toolkit.yaml` (all skills) |
+Reference this repo's `skills/` directory in your toolkit configuration.
+Each `SKILL.md` is self-contained and can be loaded as an instruction block.
+The front-matter `id` field is the canonical skill name.
 
-## Adding a New Adapter
+## GitHub Copilot
 
-1. Create `adapters/<toolname>/`
-2. Write `adapters/<toolname>/generate.sh` — must follow the contract above
-3. Write `adapters/<toolname>/README.md` — document the output format and install steps
-4. Add a smoke test step to `.github/workflows/validate.yml`
+Paste the body of relevant `skills/<id>/SKILL.md` files into your
+`copilot-instructions.md`, or reference them via `#file:skills/<id>/SKILL.md`
+in your prompt.
+
+## Other agents
+
+Read `skills/*/SKILL.md` directly. Strip the `---` delimiters to extract YAML
+front-matter; everything after the second `---` is the instruction body.
