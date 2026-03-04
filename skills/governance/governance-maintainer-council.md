@@ -1,0 +1,60 @@
+---
+id: governance-maintainer-council
+title: "Set Up Maintainer Council Governance (GOVERNANCE-maintainer.md)"
+version: "1.0.0"
+domain: governance
+cncf_requirement: encouraged
+applies_to:
+  - sandbox
+  - incubating
+  - graduated
+template_source: "https://github.com/cncf/project-template/blob/main/GOVERNANCE-maintainer.md"
+how_to_guide: "https://contribute.cncf.io/projects/best-practices/governance/"
+tags:
+  - governance
+  - maintainers
+  - decision-making
+---
+
+# Set Up Maintainer Council Governance (GOVERNANCE-maintainer.md)
+
+## When to use this skill
+
+Use when:
+- A project uses a flat maintainer council (no elections, no steering committee)
+- New maintainers are added by existing maintainer consensus
+- The project needs to document its decision-making process
+
+## What this skill does
+
+Creates or updates `GOVERNANCE-maintainer.md` with the maintainer council structure,
+decision-making process, adding/removing maintainers, and conflict resolution.
+
+## Steps
+
+1. Fetch the canonical template:
+   `https://github.com/cncf/project-template/blob/main/GOVERNANCE-maintainer.md`
+
+2. Fill in the **Maintainer Responsibilities** section: what maintainers are expected
+   to do (review cadence, release duties, community management).
+
+3. Fill in the **Decision Making** section:
+   - Lazy consensus: silence = approval after N days
+   - Voting: when is a formal vote required? What is quorum?
+   - Tie-breaking: who breaks ties?
+
+4. Fill in the **Adding Maintainers** section: nomination process, approval threshold,
+   onboarding checklist (granting repo access, adding to MAINTAINERS.md, etc.).
+
+5. Fill in the **Removing Maintainers** section: inactivity definition, emeritus
+   process, involuntary removal process (conduct violation, etc.).
+
+6. Remove all `TODO` markers and instruction links.
+
+## Validation checklist
+
+- [ ] Maintainer responsibilities defined
+- [ ] Decision-making process documented (lazy consensus + formal vote threshold)
+- [ ] Maintainer addition process documented
+- [ ] Maintainer removal / emeritus process documented
+- [ ] No `TODO` markers remain
