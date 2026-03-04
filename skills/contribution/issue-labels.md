@@ -26,6 +26,10 @@ Use when:
 - Existing labels use inconsistent naming or colors
 - A project wants to attract more new contributors
 
+Do NOT use when:
+- The repo manages labels via a config file and automation (e.g., a labeler GitHub Action) — update the config file instead of running `gh label create` directly
+- The project tracks issues in a non-GitHub system (Jira, GitLab) — apply the equivalent label concept in that tool
+
 ## What this skill does
 
 Creates or audits the GitHub issue labels recommended by CNCF for new contributor
@@ -62,3 +66,9 @@ CONTRIBUTING.md templates.
 - [ ] `help wanted` label exists with standard color (`#008672`)
 - [ ] At least 2 issues tagged with each label
 - [ ] CONTRIBUTING.md links to the correct label URLs
+
+## Common mistakes
+
+- **Adding `#` to the color value in `gh label create`** — the `--color` flag takes the hex value without `#` (e.g., `7057ff` not `#7057ff`); the commands in this skill are correct
+- **Creating labels but tagging zero existing issues** — new labels with no issues send no signal to new contributors; tag at least 2-3 issues immediately after creating the labels
+- **Inconsistent capitalization** (`Good First Issue` vs `good first issue`) — GitHub label search is case-insensitive but CNCF template URLs use lowercase; match the casing exactly

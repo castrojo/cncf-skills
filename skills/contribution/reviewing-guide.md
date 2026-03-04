@@ -25,6 +25,10 @@ Use when:
 - Reviewer behavior is inconsistent across contributors
 - New maintainers need guidance on the project's review norms
 
+Do NOT use when:
+- The project enforces review rules via tooling (OWNERS files, required status checks) — document the tool config, not a separate narrative guide
+- The project has 1-2 maintainers — a formal reviewing guide adds friction without benefit at that scale; revisit when a third reviewer joins
+
 ## What this skill does
 
 Creates or updates `REVIEWING.md` by filling out the CNCF template with
@@ -69,3 +73,9 @@ project-specific reviewer roles, values, process steps, and a review checklist.
 - [ ] Process section filled in (not placeholder)
 - [ ] Checklist section contains project-specific items
 - [ ] No instruction links remain
+
+## Common mistakes
+
+- **Emergency merge policy left blank** — this is the section most likely to be needed on a Friday and least likely to have been written; it must exist before it is needed
+- **Approval count set higher than active maintainer count** — requiring 3 approvals with 2 active maintainers stalls every PR; set a count the team can actually meet
+- **"Can a maintainer merge their own PR?" left unanswered** — this is a common source of conflict; the answer must be explicit in the Process section

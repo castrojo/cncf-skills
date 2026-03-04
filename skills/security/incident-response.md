@@ -24,6 +24,9 @@ Use when:
 - The project is expanding its security team and needs a shared runbook
 - A post-incident review revealed gaps in the response process
 
+Do NOT use when:
+- The project does not yet have a `SECURITY.md` — the reporting channel must exist before defining how to respond; create the security policy first
+
 ## What this skill does
 
 Creates or updates the incident response document with the step-by-step process
@@ -58,3 +61,9 @@ for triaging, remediating, and disclosing a confirmed security vulnerability.
 - [ ] Coordinated disclosure timeline defined
 - [ ] Public communication plan documented
 - [ ] Post-incident review process defined
+
+## Common mistakes
+
+- **"Who has access to private security forks" left undefined** — during an active incident, unclear access control delays patch development; define this in the doc, not in someone's head
+- **No named incident commander role** — "the security contacts will handle it" is not a runbook; one named person must own each active incident
+- **Post-incident review section skipped** — this is where security posture actually improves; treating every incident as a one-off guarantees the same failures recur

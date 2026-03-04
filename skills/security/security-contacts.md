@@ -24,6 +24,9 @@ Use when:
 - Security contacts have changed (people left, new security leads assigned)
 - CNCF staff requests an updated contact list
 
+Do NOT use when:
+- The project has a dedicated security team with a formal contact process already published — reference that process and link to it from SECURITY.md rather than duplicating it here
+
 ## What this skill does
 
 Creates or updates the `SECURITY_CONTACTS` file in the repository root with the
@@ -53,3 +56,9 @@ current list of individuals responsible for handling security disclosures.
 - [ ] All GitHub handles verified as current
 - [ ] Consistent with the reporting channel in SECURITY.md
 - [ ] No stale contacts (departed maintainers removed)
+
+## Common mistakes
+
+- **Using personal email addresses instead of role addresses** — when a person leaves, a personal address becomes a dead end; security@\<project\>.io survives maintainer turnover
+- **Listing only one contact** — a single contact on vacation during an active incident means the disclosure goes unacknowledged; the minimum is two
+- **SECURITY_CONTACTS not cross-checked with SECURITY.md** — if SECURITY.md says "email security@project.io" but no one in SECURITY_CONTACTS monitors that address, disclosures are lost silently

@@ -24,6 +24,9 @@ Use when:
 - Different teams own different parts of the codebase
 - CNCF reviewers request a subproject inventory during due diligence
 
+Do NOT use when:
+- The project is a single repository with no distinct ownership areas — subproject governance adds structure without benefit at that scale
+
 ## What this skill does
 
 Creates or updates `GOVERNANCE-subprojects.md` with the list of official subprojects,
@@ -58,3 +61,9 @@ their scope, ownership, and relationship to the top-level project governance.
 - [ ] Subproject archiving process documented
 - [ ] Consistent with CODEOWNERS in each subproject repo
 - [ ] No `TODO` markers remain
+
+## Common mistakes
+
+- **Listing effectively-archived repos as active subprojects** — each listed subproject implies active maintenance and CNCF due-diligence coverage; remove or explicitly mark archived repos
+- **Not specifying whether subprojects inherit or delegate governance** — this is the most common gap in subproject docs and the first question a TOC reviewer will ask
+- **CODEOWNERS not updated in each listed subproject repo** — the governance doc and CODEOWNERS must be consistent; publish the doc and update CODEOWNERS in the same PR batch

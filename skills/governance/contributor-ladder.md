@@ -25,6 +25,9 @@ Use when:
 - New contributors ask "how do I become a maintainer?"
 - The project is preparing for CNCF incubation or graduation review
 
+Do NOT use when:
+- The project has fewer than 6 months of history and 1-2 contributors — a ladder creates governance overhead before there is anyone to advance; add it when a second contributor is ready to become a reviewer
+
 ## What this skill does
 
 Creates or updates `CONTRIBUTOR_LADDER.md` with the project's defined contributor
@@ -55,3 +58,9 @@ Maintainer and above.
 - [ ] Each role has defined responsibilities, requirements, and privileges
 - [ ] Advancement process is documented for each role transition
 - [ ] No `TODO` markers remain
+
+## Common mistakes
+
+- **Copying template roles without removing unused tiers** — if the project has no Reviewers distinct from Maintainers, delete that tier rather than leaving it empty
+- **Leaving the nomination and voting process vague** (e.g., "maintainer consensus") — define the exact vote threshold and quorum; ambiguity leads to disputes at the moment when they are hardest to resolve
+- **Granting GitHub org membership at the wrong ladder tier** — org membership grants read access to all org repos; only grant it at the tier where that access is appropriate and intentional

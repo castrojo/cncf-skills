@@ -25,6 +25,10 @@ Use when:
 - An existing `CONTRIBUTING.md` still contains unfilled TODO markers or instruction links
 - A maintainer wants to audit the contributing guide for completeness
 
+Do NOT use when:
+- The project uses a non-GitHub contribution platform (Gerrit, Phabricator) — the CNCF template assumes GitHub PRs; adapt manually
+- The existing `CONTRIBUTING.md` is already complete and project-specific — run the validation checklist only, do not rewrite from the template
+
 ## What this skill does
 
 Creates or updates the project's `CONTRIBUTING.md` by filling out the CNCF template
@@ -94,3 +98,10 @@ meeting schedule, and DCO/CLA policy.
 - [ ] Development Environment Setup is filled in (not the placeholder)
 - [ ] Pull Request Checklist is project-specific (not the placeholder)
 - [ ] All URLs resolve (test a sample: meetings link, contact link, label links)
+
+## Common mistakes
+
+- **Both DCO and CLA sections left in** — the template includes both; you must delete one before merging
+- **PR Lifecycle section left as placeholder** — this is the most commonly skipped section and the most visible gap to CNCF reviewers; it must describe the project's actual process
+- **Wrong org/repo slug in label URLs** — every label URL contains the org and repo name; verify both match the actual repository
+- **Not running the TODO grep before the PR** — `grep -c 'TODO' CONTRIBUTING.md` must return 0; "looked fine" is not a verification step

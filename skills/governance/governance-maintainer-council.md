@@ -25,6 +25,9 @@ Use when:
 - New maintainers are added by existing maintainer consensus
 - The project needs to document its decision-making process
 
+Do NOT use when:
+- The project has a large enough contributor base that contested leadership decisions are expected — governance-elections is more appropriate when maintainer appointments are not universally accepted by the community
+
 ## What this skill does
 
 Creates or updates `GOVERNANCE-maintainer.md` with the maintainer council structure,
@@ -58,3 +61,9 @@ decision-making process, adding/removing maintainers, and conflict resolution.
 - [ ] Maintainer addition process documented
 - [ ] Maintainer removal / emeritus process documented
 - [ ] No `TODO` markers remain
+
+## Common mistakes
+
+- **Lazy consensus defined without a waiting period** — "silence = approval" is meaningless without a number; the standard is 5-7 business days; state it explicitly
+- **Tie-breaking mechanism omitted** — ties happen; the policy must say who resolves them before it is needed in a live conflict (e.g., longest-tenured maintainer, random selection)
+- **Self-merge after self-approval allowed** — at minimum require one other maintainer's approval even for maintainers; unchecked self-merge is a common code-of-conduct and security issue source

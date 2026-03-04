@@ -25,6 +25,9 @@ Use when:
 - The existing `SECURITY.md` is missing the reporting channel, response SLA, or supported versions
 - A project is working toward an OpenSSF Best Practices badge (requires a security disclosure policy)
 
+Do NOT use when:
+- The repository is documentation-only or contains no executable code — link to the parent project's SECURITY.md instead of creating a redundant one
+
 ## What this skill does
 
 Creates or updates `SECURITY.md` with the project's vulnerability reporting process,
@@ -74,3 +77,10 @@ Also guides setup of GitHub private vulnerability reporting and OpenSSF security
 - [ ] OpenSSF Scorecards action added (or tracked as a follow-up issue)
 - [ ] OpenSSF Best Practices badge application submitted (or link added to README if already earned)
 - [ ] No `TODO` markers remain
+
+## Common mistakes
+
+- **Directing reporters to a public GitHub issue** — this exposes the vulnerability before a patch exists; always use GitHub Private Vulnerability Reporting or a private email channel
+- **No timezone specified in response timeline** — all dates in coordinated disclosure must use UTC; a timezone-ambiguous disclosure date causes confusion with downstream distributors
+- **Supported versions table with no EOL criteria** — reviewers will ask "how does a version reach EOL?"; define the criteria or link to a RELEASES.md that does
+- **GitHub Private Vulnerability Reporting not configured** — reporters will try it even if not documented; configure it in repo settings before publishing SECURITY.md

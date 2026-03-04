@@ -24,6 +24,9 @@ Use when:
 - The project needs a formal policy for pre-disclosure to distribution partners
 - Setting up a security response committee or distributors list
 
+Do NOT use when:
+- The project has no downstream distributors who bundle and ship the software — a library consumed only via package managers does not need a distributors embargo policy
+
 ## What this skill does
 
 Creates or updates the embargo policy governing how and when the project notifies
@@ -52,3 +55,9 @@ downstream distributors before public disclosure of a security vulnerability.
 - [ ] Distributor obligations documented
 - [ ] Private distribution channel identified
 - [ ] No `TODO` markers remain
+
+## Common mistakes
+
+- **Default embargo period longer than 90 days** — this conflicts with coordinated disclosure norms and will draw criticism from security researchers; 45 days non-critical, 7 days critical is the standard
+- **No enforcement clause for embargo violations** — the policy needs teeth; specify the consequence for a distributor who discloses early (removal from the list)
+- **Publishing the policy before creating the private channel** — the policy references the channel; set up the private mailing list or GitHub team first, then publish the policy

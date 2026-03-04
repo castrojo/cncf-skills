@@ -25,6 +25,9 @@ Use when:
 - Maintainer affiliations or areas have changed
 - CNCF staff requests an updated maintainer list
 
+Do NOT use when:
+- The project uses an automated OWNERS file as the sole authoritative source — OWNERS files are machine-read by Prow/Tide; MAINTAINERS.md is the human-readable companion, not a replacement for it
+
 ## What this skill does
 
 Creates or updates `MAINTAINERS.md` with the current list of project maintainers,
@@ -63,3 +66,9 @@ areas of ownership.
 - [ ] No `TODO` markers remain
 - [ ] Consistent with OWNERS / CODEOWNERS root approvers
 - [ ] CNCF staff notified if initial creation
+
+## Common mistakes
+
+- **Employer listed as "Independent" without verification** — ask the maintainer directly; "independent" vs. employed affects CNCF's vendor-neutrality assessment for incubation and graduation
+- **Forgetting the CNCF foundation CSV after initial creation** — CNCF staff cannot include the project in official maintainer counts until `project-maintainers.csv` is updated; this is the step most often skipped
+- **MAINTAINERS.md drifting from OWNERS root approvers** — the two must stay in sync; a mismatch is embarrassing during due diligence and easy to prevent with a reminder in the PR template
