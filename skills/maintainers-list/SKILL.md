@@ -1,7 +1,7 @@
 ---
 id: maintainers-list
 title: "Create or Update a MAINTAINERS.md"
-version: "1.1.0"
+version: "2.0.0"
 domain: governance
 cncf_requirement: required
 applies_to:
@@ -14,11 +14,16 @@ tags:
   - maintainers
   - governance
   - cncf-required
+mcp_servers:
+  - id: github
+    description: "Check file existence, fetch template, create or update MAINTAINERS.md, verify org membership"
+    url: "https://github.com/github/mcp-server-github"
 ---
 
-# Create or Update a MAINTAINERS.md
+Create or update `MAINTAINERS.md` with the current list of project maintainers,
+their GitHub handles, employer affiliations, and areas of ownership.
 
-## When to use this skill
+## When to use
 
 Use when:
 - A new CNCF sandbox project needs to establish its MAINTAINERS.md (required)
@@ -26,66 +31,39 @@ Use when:
 - CNCF staff requests an updated maintainer list
 
 Do NOT use when:
-- The project uses an automated OWNERS file as the sole authoritative source — OWNERS files are machine-read by Prow/Tide; MAINTAINERS.md is the human-readable companion, not a replacement for it
-
-## What this skill does
-
-Creates or updates `MAINTAINERS.md` with the current list of project maintainers,
-their GitHub handles, employer affiliations, and (optionally) their specific
-areas of ownership.
+- The project uses an automated OWNERS file as the sole authoritative source — OWNERS files are machine-read by Prow/Tide; MAINTAINERS.md is the human-readable companion, not a replacement
 
 ## Steps
 
-1. Fetch the canonical template:
-   `https://github.com/cncf/project-template/blob/main/MAINTAINERS.md`
+1. **Fetch the template.**
+   If GitHub MCP available: `github_get_contents` path=`cncf/project-template/MAINTAINERS.md`
+   Otherwise: `gh api repos/cncf/project-template/contents/MAINTAINERS.md`
 
-2. Replace `<Project Name>` with the actual project name throughout.
+2. **Replace `<Project Name>`** with the actual project name throughout.
 
-3. For each current maintainer, add a table row with:
-   - Full name
-   - GitHub handle
-   - Employer / affiliation
-   - Area of ownership (optional — omit column if all maintainers are general)
+3. **For each current maintainer, add a table row:**
+   - Full name, GitHub handle, employer/affiliation, area of ownership (optional)
+   ⚠️ Verify affiliations against current employment — outdated entries are flagged at graduation due diligence.
+   ⚠️ "Independent" is not a second organization for multi-org diversity purposes.
 
-4. If the project uses an OWNERS file or GitHub CODEOWNERS, ensure this list is
-   consistent with the root-level approvers in those files.
+4. **Check multi-org diversity.** Count distinct employer affiliations.
+   ⚠️ Graduation requires maintainers from at least 2 organizations — this is a hard gate.
 
-5. If the project has a Steering Committee or elected leadership, list those
-   members instead of (or in addition to) code approvers.
+5. **Ensure consistency** with root-level approvers in OWNERS / CODEOWNERS.
 
-6. Remove all `TODO` markers and instruction links.
-
-7. After merging, notify CNCF staff if this is the initial creation:
-   reference the CNCF foundation maintainer CSV at
+6. **Notify CNCF staff** if this is the initial creation by updating:
    `https://github.com/cncf/foundation/blob/master/project-maintainers.csv`
+   ⚠️ CNCF cannot include the project in official maintainer counts until this CSV is updated.
 
-## Validation checklist
+7. **Remove all TODO markers and instruction links.**
+
+## Checklist
 
 - [ ] Project name replaced throughout
 - [ ] All current maintainers listed with correct affiliations
+- [ ] Affiliations verified against current employment (graduation)
+- [ ] Maintainers from at least 2 organizations (graduation — hard gate)
+- [ ] Domain of responsibility column present (graduation)
+- [ ] Consistent with OWNERS / CODEOWNERS root approvers (graduation)
+- [ ] CNCF foundation CSV updated if initial creation
 - [ ] No `TODO` markers remain
-- [ ] Consistent with OWNERS / CODEOWNERS root approvers
-- [ ] CNCF staff notified if initial creation
-
-## Common mistakes
-
-- **Employer listed as "Independent" without verification** — ask the maintainer directly; "independent" vs. employed affects CNCF's vendor-neutrality assessment for incubation and graduation
-- **Forgetting the CNCF foundation CSV after initial creation** — CNCF staff cannot include the project in official maintainer counts until `project-maintainers.csv` is updated; this is the step most often skipped
-- **MAINTAINERS.md drifting from OWNERS root approvers** — the two must stay in sync; a mismatch is embarrassing during due diligence and easy to prevent with a reminder in the PR template
-
-## Graduation readiness
-
-Graduation criteria satisfied (from the CNCF graduation application):
-- **Document complete list of current maintainers, including names, contact information, domain of responsibility, and affiliation** (Required)
-- **Project maintainers from at least 2 organizations that demonstrates survivability** (Required — hard gate)
-- **Code and Doc ownership in GitHub and elsewhere matches documented governance roles** (Required)
-
-What graduation reviewers specifically check:
-
-1. **Multi-organization affiliation — hard gate** — graduation cannot proceed if all maintainers are employed by the same organization. Count distinct employer affiliations in the affiliation column before submitting the application. "Independent" is not a second organization; it means one person is not affiliated with the primary employer, but the project still lacks organizational survivability. The CNCF graduation criterion is explicit: maintainers from "at least 2 organizations."
-
-2. **Affiliation accuracy** — TOC reviewers verify affiliations against LinkedIn and public records. An outdated affiliation (maintainer changed jobs, still listed at the old employer) is a common due-diligence finding. Audit all entries against current employment immediately before submitting the graduation application.
-
-3. **Domain of responsibility column** — at sandbox, this column is often omitted. At graduation, reviewers want to understand who is responsible for what. If the project has grown to cover multiple components or repos, add a "Domain" column mapping each maintainer to their area(s) of ownership.
-
-4. **CNCF foundation CSV** — the CNCF foundation tracks maintainer counts in `https://github.com/cncf/foundation/blob/master/project-maintainers.csv`. Verify this is current before the graduation application is reviewed; stale data there will be flagged.

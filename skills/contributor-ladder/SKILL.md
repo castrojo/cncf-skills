@@ -1,7 +1,7 @@
 ---
 id: contributor-ladder
 title: "Create or Update a CONTRIBUTOR_LADDER.md"
-version: "1.1.0"
+version: "2.0.0"
 domain: governance
 cncf_requirement: encouraged
 applies_to:
@@ -14,11 +14,16 @@ tags:
   - governance
   - contributor-growth
   - roles
+mcp_servers:
+  - id: github
+    description: "Check file existence, fetch template, create or update CONTRIBUTOR_LADDER.md"
+    url: "https://github.com/github/mcp-server-github"
 ---
 
-# Create or Update a CONTRIBUTOR_LADDER.md
+Create or update `CONTRIBUTOR_LADDER.md` with the project's roles, responsibilities,
+and advancement criteria from Community Participant through Maintainer and above.
 
-## When to use this skill
+## When to use
 
 Use when:
 - A project wants to define clear paths for contributor advancement
@@ -28,56 +33,42 @@ Use when:
 Do NOT use when:
 - The project has fewer than 6 months of history and 1-2 contributors — a ladder creates governance overhead before there is anyone to advance; add it when a second contributor is ready to become a reviewer
 
-## What this skill does
-
-Creates or updates `CONTRIBUTOR_LADDER.md` with the project's defined contributor
-roles, responsibilities, and advancement criteria from Community Participant through
-Maintainer and above.
-
 ## Steps
 
-1. Fetch the canonical template:
-   `https://github.com/cncf/project-template/blob/main/CONTRIBUTOR_LADDER.md`
+1. **Fetch the template.**
+   If GitHub MCP available: `github_get_contents` path=`cncf/project-template/CONTRIBUTOR_LADDER.md`
+   Otherwise: `gh api repos/cncf/project-template/contents/CONTRIBUTOR_LADDER.md`
 
-2. Review the template's default roles: Community Participant, Contributor,
-   Organization Member, Reviewer, Maintainer. Add or remove roles to match
-   the project's actual governance structure.
+2. **Check if the file exists.**
+   If GitHub MCP available: `github_get_contents` path=`CONTRIBUTOR_LADDER.md`
+   Otherwise: `gh api repos/{owner}/{repo}/contents/CONTRIBUTOR_LADDER.md`
 
-3. For each role, define:
+3. **Trim default roles** to match actual project structure. The template includes
+   Community Participant, Contributor, Organization Member, Reviewer, Maintainer.
+   ⚠️ Remove unused tiers rather than leaving them empty — empty tiers confuse new contributors.
+
+4. **For each role, define:**
    - Responsibilities (what they do)
    - Requirements (what qualifies someone)
    - Privileges (what access they have)
 
-4. Fill in the nomination and voting process for each advancement.
+5. **Fill in nomination and voting process** for each role transition.
+   ⚠️ Define the exact vote threshold and quorum — "maintainer consensus" is too vague and leads to disputes.
 
-5. Remove all `TODO` markers and instruction links.
+6. **Add an emeritus section** defining what happens when a maintainer becomes inactive.
+   ⚠️ GitHub org membership access must be explicitly revoked at offboarding — document this step.
 
-## Validation checklist
+7. **Add an affiliation diversity note** stating that maintainer diversity across organizations
+   is considered in nominations. See graduation-checklist skill for the exact requirement.
+
+8. **Remove all TODO markers and instruction links.**
+
+## Checklist
 
 - [ ] All roles reflect the project's actual governance structure
 - [ ] Each role has defined responsibilities, requirements, and privileges
-- [ ] Advancement process is documented for each role transition
+- [ ] Advancement process is documented for each role transition with vote threshold and quorum (graduation)
+- [ ] Emeritus status defined and applies to at least one past maintainer (graduation)
+- [ ] Offboarding explicitly revokes GitHub org membership (graduation)
+- [ ] Affiliation diversity considered in maintainer nominations (graduation)
 - [ ] No `TODO` markers remain
-
-## Common mistakes
-
-- **Copying template roles without removing unused tiers** — if the project has no Reviewers distinct from Maintainers, delete that tier rather than leaving it empty
-- **Leaving the nomination and voting process vague** (e.g., "maintainer consensus") — define the exact vote threshold and quorum; ambiguity leads to disputes at the moment when they are hardest to resolve
-- **Granting GitHub org membership at the wrong ladder tier** — org membership grants read access to all org repos; only grant it at the tier where that access is appropriate and intentional
-
-## Graduation readiness
-
-Graduation criteria satisfied (from the CNCF graduation application):
-- **Document a complete maintainer lifecycle process (including roles, onboarding, offboarding, and emeritus status)** (Required)
-- **Document how role, function-based members, or sub-teams are assigned, onboarded, and removed** (Required)
-- **Demonstrate usage of the maintainer lifecycle with outcomes** (Required — behavioral, not just documented)
-
-What graduation reviewers specifically check:
-
-1. **Evidence the ladder has been used** — this is the most commonly missed graduation criterion. The graduation application asks projects to "demonstrate usage of the maintainer lifecycle with outcomes, either through the addition or replacement of maintainers as project events have required." A ladder that was written but never exercised does not satisfy this. Before applying, compile a list of PRs or issues where contributors were advanced (or offboarded) through the documented process. Link these in the graduation application.
-
-2. **Emeritus status defined and used** — graduation reviewers look for emeritus entries in MAINTAINERS.md or the contributor ladder doc. An emeritus section with at least one name signals that the process is real and has been applied when maintainers became inactive.
-
-3. **Affiliation diversity at the top tier** — graduation requires maintainers from ≥2 organizations. The ladder should explicitly state that affiliation diversity is considered when evaluating maintainer nominations — not to discriminate, but to ensure no single organization can block project decisions. This statement protects the project in vendor-neutrality assessments.
-
-4. **Offboarding process documented** — the "removing maintainers" section must define what happens to repo access when a maintainer is offboarded (revoke GitHub org membership, remove from CODEOWNERS, update MAINTAINERS.md). Graduation reviewers check this against the project's actual GitHub team membership.
