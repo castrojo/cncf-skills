@@ -52,7 +52,7 @@ Do NOT use when:
    `https://github.com/cncf/foundation/blob/master/project-maintainers.csv`
    ⚠️ CNCF cannot include the project in official maintainer counts until this CSV is updated.
 
-7. **Remove all TODO markers and instruction links.**
+8. **Remove all TODO markers and instruction links.**
 
 ## Checklist
 
