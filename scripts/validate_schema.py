@@ -26,7 +26,7 @@ def main():
     with open(args.schema) as f:
         schema = json.load(f)
 
-    skill_files = sorted(glob.glob(f"{args.skills_dir}/**/*.md", recursive=True))
+    skill_files = sorted(glob.glob(f"{args.skills_dir}/*/SKILL.md"))
     errors = []
 
     for sf in skill_files:
