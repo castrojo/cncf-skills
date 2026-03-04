@@ -28,9 +28,7 @@ def parse_skill(path: str) -> tuple[dict, str]:
 
 
 def render(skills_dir: str, output_path: str) -> None:
-    skill_files = sorted(
-        glob.glob(os.path.join(skills_dir, "**", "*.md"), recursive=True)
-    )
+    skill_files = sorted(glob.glob(os.path.join(skills_dir, "*/SKILL.md")))
     instructions = []
     for sf in skill_files:
         meta, body = parse_skill(sf)
@@ -41,7 +39,7 @@ def render(skills_dir: str, output_path: str) -> None:
                 "instructions": body,
             }
         )
-        print(f"  included: {meta['domain']}/{meta['id']}")
+        print(f"  included: {meta['id']}")
 
     toolkit = {
         "toolkit": {

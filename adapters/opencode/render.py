@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Render a single skill file into OpenCode-native artifacts."""
+"""Render all skill files into OpenCode-native artifacts."""
 
-import argparse
+import glob
 import json
 import os
 import re
+import shutil
 import sys
 
 try:
@@ -30,12 +31,11 @@ def parse_skill(path: str) -> tuple[dict, str]:
 def render(skill_path: str, output_dir: str) -> None:
     meta, body = parse_skill(skill_path)
     skill_id = meta["id"]
-    domain = meta["domain"]
 
-    out = os.path.join(output_dir, domain, skill_id)
+    out = os.path.join(output_dir, skill_id)
     os.makedirs(out, exist_ok=True)
 
-    # SKILL.md — the Markdown body verbatim
+    # SKILL.md — the Markdown body (front-matter stripped)
     with open(os.path.join(out, "SKILL.md"), "w") as f:
         f.write(body + "\n")
 
@@ -50,12 +50,26 @@ def render(skill_path: str, output_dir: str) -> None:
         json.dump(manifest, f, indent=2)
         f.write("\n")
 
-    print(f"  rendered: {domain}/{skill_id}")
+    # Copy references/ directory if it exists
+    skill_dir = os.path.dirname(skill_path)
+    refs_src = os.path.join(skill_dir, "references")
+    if os.path.isdir(refs_src):
+        refs_dst = os.path.join(out, "references")
+        if os.path.exists(refs_dst):
+            shutil.rmtree(refs_dst)
+        shutil.copytree(refs_src, refs_dst)
+
+    print(f"  rendered: {skill_id}")
 
 
 if __name__ == "__main__":
+    import argparse
+
     parser = argparse.ArgumentParser()
-    parser.add_argument("--skill", required=True)
+    parser.add_argument("--skills-dir", required=True)
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
-    render(args.skill, args.output)
+
+    skill_files = sorted(glob.glob(os.path.join(args.skills_dir, "*/SKILL.md")))
+    for sf in skill_files:
+        render(sf, args.output)
