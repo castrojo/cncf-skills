@@ -56,8 +56,12 @@ by `just check`. A skill that fails validation will not be merged.
 
 ### Front-matter fields
 
-Claude requires two fields: `name` and `description`. This repo uses `id` in place of
-`name`. That is the entire required schema.
+Per the Claude skill spec (https://docs.anthropic.com/en/docs/claude-code/skills):
+- `name` — optional; if omitted, the directory name is used as the slash command
+- `description` — recommended; used by Claude to decide when to auto-invoke the skill
+
+This repo's schema requires only `id` (the canonical cross-tool identifier, equal to the
+directory name) and `description`. No other fields are required.
 
 **Before adding a front-matter field, ask:** "Does an agent need this to use the skill?"
 If no, do not add the field. Metadata that helps humans browse the repo belongs in the

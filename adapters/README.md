@@ -9,8 +9,8 @@
 ## How skills are structured
 
 Each skill lives at `skills/<id>/SKILL.md` with YAML front-matter followed by a
-markdown body. The front-matter fields (`id`, `title`, `domain`, `cncf_requirement`,
-`applies_to`, `tags`) are machine-readable metadata. The body is the agent instruction.
+markdown body. Required front-matter: `id` (stable identifier) and `description`
+(used by agents to decide when to invoke the skill). The body is the agent instruction.
 
 Some skills include reference templates under `skills/<id>/references/`.
 

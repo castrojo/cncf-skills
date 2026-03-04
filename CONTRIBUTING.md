@@ -16,21 +16,19 @@ See `skills/contributing-guide/SKILL.md` as a reference implementation.
 
 | Field | Required | Description |
 |---|---|---|
-| `id` | yes | Stable kebab-case identifier — never change after v1.0 |
-| `title` | yes | Human-readable skill name |
-| `version` | yes | semver — bump minor for new instructions, major for breaking changes |
-| `domain` | yes | `contribution`, `governance`, `security`, or `lifecycle` |
-| `cncf_requirement` | yes | `required`, `encouraged`, or `optional` |
-| `applies_to` | yes | List of: `sandbox`, `incubating`, `graduated` |
-| `template_source` | yes | Canonical GitHub URL of the upstream template file |
+| `id` | yes | Stable kebab-case identifier — never change after publishing |
+| `description` | yes | Third-person, 20–1024 chars, what the skill does and when to use it |
+| `template_source` | no | Canonical GitHub URL of the upstream CNCF template file |
 | `how_to_guide` | no | URL to the contribute.cncf.io how-to page |
-| `tags` | no | Free-form list of searchable tags |
+| `mcp_servers` | no | MCP servers this skill uses (see schema for structure) |
+
+See `schema/skill.schema.json` for the authoritative contract and
+`https://docs.anthropic.com/en/docs/claude-code/skills` for Claude's skill spec.
 
 ## Modifying an Existing Skill
 
-- **Non-breaking** (better wording, additional guidance): bump patch version
-- **New required step**: bump minor version
-- **Removed or renamed field / changed step contract**: bump major version
+- **Better wording, additional guidance**: update the body, re-run `just check`
+- **New required step or changed instructions**: update the body, re-run `just check`
 
 ## Adding Support for a New Agent Tool
 

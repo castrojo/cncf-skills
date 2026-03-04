@@ -17,7 +17,7 @@ creating, updating, or auditing a required CNCF community health file.
 | `contribution` | contributing-guide, reviewing-guide, issue-labels | required / encouraged |
 | `governance` | maintainers-list, contributor-ladder, governance docs | required / encouraged |
 | `security` | security-policy, security-contacts, incident-response, embargo docs | required / encouraged |
-| `lifecycle` | _(reserved for future growth)_ | — |
+| `lifecycle` | adopters, architecture, codeowners, releases, roadmap, and more | required / encouraged |
 
 ## Using a Skill
 
