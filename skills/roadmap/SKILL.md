@@ -1,27 +1,16 @@
 ---
+description: Creates or updates ROADMAP.md publishing the project's planned direction,
+  milestones, and timeline. Use when a CNCF project needs a public roadmap required
+  for sandbox and above, or when the existing roadmap is stale.
 id: roadmap
-title: "Create or Update a Public ROADMAP.md"
-description: "Creates or updates ROADMAP.md publishing the project's planned direction, milestones, and timeline. Use when a CNCF project needs a public roadmap required for sandbox and above, or when the existing roadmap is stale."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://contribute.cncf.io/maintainers/community/roadmap/"
-tags:
-  - roadmap
-  - planning
-  - transparency
-  - governance
 mcp_servers:
-  - id: github
-    description: "Check file existence, create files, open PRs"
-    url: "https://github.com/github/mcp-server-github"
-  - id: cncf-landscape
-    description: "Verify project maturity level and landscape metadata"
-    url: "https://github.com/cncf/landscape-mcp"
+- description: Check file existence, create files, open PRs
+  id: github
+  url: https://github.com/github/mcp-server-github
+- description: Verify project maturity level and landscape metadata
+  id: cncf-landscape
+  url: https://github.com/cncf/landscape-mcp
+template_source: https://contribute.cncf.io/maintainers/community/roadmap/
 ---
 
 Create or update `ROADMAP.md` to give the community a clear picture of where the project

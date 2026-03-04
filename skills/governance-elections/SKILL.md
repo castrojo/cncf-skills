@@ -1,23 +1,14 @@
 ---
+description: Creates or updates elections-based GOVERNANCE.md defining how maintainers
+  are elected, terms, and removal process. Use when a CNCF project uses an election
+  model for leadership and needs formal governance documentation.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/governance/
 id: governance-elections
-title: "Set Up Elections-Based Governance (GOVERNANCE-elections.md)"
-description: "Creates or updates elections-based GOVERNANCE.md defining how maintainers are elected, terms, and removal process. Use when a CNCF project uses an election model for leadership and needs formal governance documentation."
-version: "2.0.0"
-domain: governance
-cncf_requirement: encouraged
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/GOVERNANCE-elections.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/governance/"
-tags:
-  - governance
-  - elections
-  - maintainers
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, create or update GOVERNANCE-elections.md"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, create or update GOVERNANCE-elections.md
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/project-template/blob/main/GOVERNANCE-elections.md
 ---
 
 Create or update `GOVERNANCE-elections.md` with the project's election process for

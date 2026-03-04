@@ -1,24 +1,14 @@
 ---
+description: Creates or updates REVIEWING.md documenting how code reviews are conducted
+  and what reviewers are expected to check. Use when a CNCF project wants to standardize
+  review expectations and document the review process.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/templates/reviewing
 id: reviewing-guide
-title: "Create or Update a REVIEWING.md"
-description: "Creates or updates REVIEWING.md documenting how code reviews are conducted and what reviewers are expected to check. Use when a CNCF project wants to standardize review expectations and document the review process."
-version: "2.0.0"
-domain: contribution
-cncf_requirement: encouraged
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/REVIEWING.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/templates/reviewing"
-tags:
-  - reviewers
-  - code-review
-  - process
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, create or update REVIEWING.md"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, create or update REVIEWING.md
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/project-template/blob/main/REVIEWING.md
 ---
 
 Create or update `REVIEWING.md` with project-specific reviewer roles, values,

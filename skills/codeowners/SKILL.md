@@ -1,24 +1,14 @@
 ---
+description: Creates or updates CODEOWNERS to assign code review ownership by directory
+  or file pattern. Use when a CNCF project needs to define who must approve changes
+  to specific parts of the codebase.
 id: codeowners
-title: "Create or Update a CODEOWNERS File"
-description: "Creates or updates CODEOWNERS to assign code review ownership by directory or file pattern. Use when a CNCF project needs to define who must approve changes to specific parts of the codebase."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners"
-tags:
-  - governance
-  - ownership
-  - code-review
-  - maintainers
 mcp_servers:
-  - id: github
-    description: "Check file existence, list repo structure, create .github/CODEOWNERS, verify branch protection"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, list repo structure, create .github/CODEOWNERS,
+    verify branch protection
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 ---
 
 Create or update `.github/CODEOWNERS` mapping file path patterns to GitHub users or

@@ -1,12 +1,10 @@
 ---
+description: Lists all available CNCF community health skills by domain and requirement
+  level. Use when discovering which skills exist, routing to the correct skill for
+  a specific CNCF template, or getting an overview of what community health documents
+  a project needs.
 id: _index
-title: "CNCF Skills Index"
-description: "Lists all available CNCF community health skills by domain and requirement level. Use when discovering which skills exist, routing to the correct skill for a specific CNCF template, or getting an overview of what community health documents a project needs."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: optional
-applies_to: [sandbox, incubating, graduated]
-template_source: "https://github.com/cncf/project-template"
+template_source: https://github.com/cncf/project-template
 ---
 
 Load this skill first when you need to choose which CNCF skill to invoke.

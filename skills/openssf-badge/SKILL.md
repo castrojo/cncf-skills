@@ -1,25 +1,14 @@
 ---
+description: Guides a project through earning the OpenSSF Best Practices badge by
+  completing the criteria checklist. Use when a CNCF project is applying for the badge
+  for the first time or renewing an expired badge required for graduation.
+how_to_guide: https://bestpractices.coreinfrastructure.org/en/criteria/0
 id: openssf-badge
-title: "Earn the OpenSSF Best Practices Badge"
-description: "Guides a project through earning the OpenSSF Best Practices badge by completing the criteria checklist. Use when a CNCF project is applying for the badge for the first time or renewing an expired badge required for graduation."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://bestpractices.coreinfrastructure.org/en"
-how_to_guide: "https://bestpractices.coreinfrastructure.org/en/criteria/0"
-tags:
-  - security
-  - openssf
-  - badge
-  - graduation
-  - cncf-required
 mcp_servers:
-  - id: github
-    description: "Add badge to README, verify branch protection, check CI workflow files"
-    url: "https://github.com/github/mcp-server-github"
+- description: Add badge to README, verify branch protection, check CI workflow files
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://bestpractices.coreinfrastructure.org/en
 ---
 
 Complete the OpenSSF Best Practices questionnaire at bestpractices.coreinfrastructure.org

@@ -1,24 +1,15 @@
 ---
+description: Creates or updates MAINTAINERS.md listing current maintainers with GitHub
+  handles, affiliations, and voting rights. Use when a CNCF project needs to document
+  project ownership or the maintainer list has changed.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/templates/maintainers
 id: maintainers-list
-title: "Create or Update a MAINTAINERS.md"
-description: "Creates or updates MAINTAINERS.md listing current maintainers with GitHub handles, affiliations, and voting rights. Use when a CNCF project needs to document project ownership or the maintainer list has changed."
-version: "2.0.0"
-domain: governance
-cncf_requirement: required
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/MAINTAINERS.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/templates/maintainers"
-tags:
-  - maintainers
-  - governance
-  - cncf-required
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, create or update MAINTAINERS.md, verify org membership"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, create or update MAINTAINERS.md,
+    verify org membership
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/project-template/blob/main/MAINTAINERS.md
 ---
 
 Create or update `MAINTAINERS.md` with the current list of project maintainers,

@@ -1,26 +1,16 @@
 ---
+description: Creates or updates RELEASES.md documenting the release process, versioning
+  policy, and release cadence. Use when a CNCF project needs to formalize its release
+  process for transparency and contributor onboarding.
 id: releases
-title: "Document the Release Process (RELEASES.md)"
-description: "Creates or updates RELEASES.md documenting the release process, versioning policy, and release cadence. Use when a CNCF project needs to formalize its release process for transparency and contributor onboarding."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://contribute.cncf.io/maintainers/github/releases/"
-tags:
-  - releases
-  - versioning
-  - lifecycle
-  - changelog
 mcp_servers:
-  - id: github
-    description: "Check file existence, create files, open PRs"
-    url: "https://github.com/github/mcp-server-github"
-  - id: cncf-landscape
-    description: "Verify project maturity level and landscape metadata"
-    url: "https://github.com/cncf/landscape-mcp"
+- description: Check file existence, create files, open PRs
+  id: github
+  url: https://github.com/github/mcp-server-github
+- description: Verify project maturity level and landscape metadata
+  id: cncf-landscape
+  url: https://github.com/cncf/landscape-mcp
+template_source: https://contribute.cncf.io/maintainers/github/releases/
 ---
 
 Create `RELEASES.md` in the repository root documenting the project's versioning scheme,

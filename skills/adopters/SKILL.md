@@ -1,27 +1,18 @@
 ---
+description: Creates or updates ADOPTERS.md listing organizations using the project
+  in production. Use when a CNCF project needs to document adopters for sandbox, incubating,
+  or graduated status requirements.
+how_to_guide: https://contribute.cncf.io/maintainers/community/users/
 id: adopters
-title: "Create or Update an ADOPTERS.md"
-description: "Creates or updates ADOPTERS.md listing organizations using the project in production. Use when a CNCF project needs to document adopters for sandbox, incubating, or graduated status requirements."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/ADOPTERS.md"
-how_to_guide: "https://contribute.cncf.io/maintainers/community/users/"
-tags:
-  - community
-  - adopters
-  - production-use
-  - graduation
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, create ADOPTERS.md, create issue template"
-    url: "https://github.com/github/mcp-server-github"
-  - id: cncf-landscape
-    description: "Verify project maturity level and production adoption metadata"
-    url: "https://github.com/cncf/landscape-mcp"
+- description: Check file existence, fetch template, create ADOPTERS.md, create issue
+    template
+  id: github
+  url: https://github.com/github/mcp-server-github
+- description: Verify project maturity level and production adoption metadata
+  id: cncf-landscape
+  url: https://github.com/cncf/landscape-mcp
+template_source: https://github.com/cncf/project-template/blob/main/ADOPTERS.md
 ---
 
 Create or update `ADOPTERS.md` with a curated list of organizations running the project

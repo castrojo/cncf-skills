@@ -1,24 +1,15 @@
 ---
+description: Creates or updates SECURITY.md defining the vulnerability reporting process,
+  disclosure timeline, and supported versions. Use when a CNCF project is missing
+  a security policy or needs to update reporting instructions.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/security/
 id: security-policy
-title: "Create or Update a SECURITY.md (Security Policy)"
-description: "Creates or updates SECURITY.md defining the vulnerability reporting process, disclosure timeline, and supported versions. Use when a CNCF project is missing a security policy or needs to update reporting instructions."
-version: "2.0.0"
-domain: security
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/tag-security/blob/main/project-resources/templates/SECURITY.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/security/"
-tags:
-  - security
-  - vulnerability-disclosure
-  - cncf-required
-  - openssf
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, enable private vulnerability reporting, create SECURITY.md"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, enable private vulnerability
+    reporting, create SECURITY.md
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/tag-security/blob/main/project-resources/templates/SECURITY.md
 ---
 
 Create or update `SECURITY.md` with the project's vulnerability reporting channel,

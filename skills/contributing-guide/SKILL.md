@@ -1,24 +1,14 @@
 ---
+description: Creates or updates CONTRIBUTING.md using the CNCF template, replacing
+  all TODO markers with project-specific content. Use when a CNCF project is missing
+  a contributing guide or has unfilled placeholder text.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/templates/contributing
 id: contributing-guide
-title: "Create or Update a CONTRIBUTING.md"
-description: "Creates or updates CONTRIBUTING.md using the CNCF template, replacing all TODO markers with project-specific content. Use when a CNCF project is missing a contributing guide or has unfilled placeholder text."
-version: "2.0.0"
-domain: contribution
-cncf_requirement: required
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/CONTRIBUTING.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/templates/contributing"
-tags:
-  - onboarding
-  - contributors
-  - documentation
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, create or update CONTRIBUTING.md"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, create or update CONTRIBUTING.md
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/project-template/blob/main/CONTRIBUTING.md
 ---
 
 Create or update `CONTRIBUTING.md` using the CNCF template, replacing all TODO

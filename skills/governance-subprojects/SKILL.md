@@ -1,23 +1,15 @@
 ---
+description: Documents subprojects in the project's governance file, defining ownership,
+  scope, and leadership per subproject. Use when a CNCF project has multiple loosely
+  coupled components that each need formal ownership documented.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/governance/
 id: governance-subprojects
-title: "Document Subprojects in Governance (GOVERNANCE-subprojects.md)"
-description: "Documents subprojects in the project's governance file, defining ownership, scope, and leadership per subproject. Use when a CNCF project has multiple loosely coupled components that each need formal ownership documented."
-version: "2.0.0"
-domain: governance
-cncf_requirement: encouraged
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/GOVERNANCE-subprojects.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/governance/"
-tags:
-  - governance
-  - subprojects
-  - scope
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, list repos in org, create or update GOVERNANCE-subprojects.md"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, list repos in org, create or
+    update GOVERNANCE-subprojects.md
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/project-template/blob/main/GOVERNANCE-subprojects.md
 ---
 
 Create or update `GOVERNANCE-subprojects.md` with the list of official subprojects,

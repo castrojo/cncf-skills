@@ -1,23 +1,14 @@
 ---
+description: Creates or updates SECURITY_CONTACTS listing the people responsible for
+  receiving and triaging vulnerability reports. Use when a CNCF project needs to publish
+  who handles security disclosures.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/security/
 id: security-contacts
-title: "Create or Update SECURITY_CONTACTS"
-description: "Creates or updates SECURITY_CONTACTS listing the people responsible for receiving and triaging vulnerability reports. Use when a CNCF project needs to publish who handles security disclosures."
-version: "2.0.0"
-domain: security
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/tag-security/blob/main/project-resources/templates/SECURITY_CONTACTS"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/security/"
-tags:
-  - security
-  - contacts
-  - cncf-required
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, create or update SECURITY_CONTACTS"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, create or update SECURITY_CONTACTS
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/tag-security/blob/main/project-resources/templates/SECURITY_CONTACTS
 ---
 
 Create or update the `SECURITY_CONTACTS` file in the repository root with the

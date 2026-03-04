@@ -1,25 +1,14 @@
 ---
+description: Sets up GitHub issue labels for new contributor onboarding, including
+  good-first-issue and help-wanted labels. Use when a CNCF project wants to improve
+  contributor discoverability and welcoming.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/templates/issue-labels
 id: issue-labels
-title: "Set Up Issue Labels for New Contributors"
-description: "Sets up GitHub issue labels for new contributor onboarding, including good-first-issue and help-wanted labels. Use when a CNCF project wants to improve contributor discoverability and welcoming."
-version: "2.0.0"
-domain: contribution
-cncf_requirement: encouraged
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/templates/issue-labels"
-tags:
-  - issues
-  - triage
-  - contributors
-  - onboarding
 mcp_servers:
-  - id: github
-    description: "List labels, create missing labels, list issues"
-    url: "https://github.com/github/mcp-server-github"
+- description: List labels, create missing labels, list issues
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/project-template
 ---
 
 Create the standard CNCF `good first issue` and `help wanted` labels in the GitHub

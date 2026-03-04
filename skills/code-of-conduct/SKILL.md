@@ -1,25 +1,15 @@
 ---
+description: Adopts the CNCF Code of Conduct by adding a reference or embedding the
+  canonical text. Use when a CNCF project is missing a code of conduct or needs to
+  align with the official CNCF standard.
+how_to_guide: https://contribute.cncf.io/maintainers/community/code-of-conduct/
 id: code-of-conduct
-title: "Adopt the CNCF Code of Conduct"
-description: "Adopts the CNCF Code of Conduct by adding a reference or embedding the canonical text. Use when a CNCF project is missing a code of conduct or needs to align with the official CNCF standard."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/foundation/blob/main/code-of-conduct.md"
-how_to_guide: "https://contribute.cncf.io/maintainers/community/code-of-conduct/"
-tags:
-  - community
-  - code-of-conduct
-  - governance
-  - cncf-required
 mcp_servers:
-  - id: github
-    description: "Check file existence, create CODE_OF_CONDUCT.md, update README and CONTRIBUTING"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, create CODE_OF_CONDUCT.md, update README and
+    CONTRIBUTING
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/foundation/blob/main/code-of-conduct.md
 ---
 
 Place a CNCF-compliant `CODE_OF_CONDUCT.md` in the repository root, link it from

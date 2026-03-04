@@ -4,7 +4,7 @@
   "title": "CNCF Skill Front-Matter",
   "description": "Schema for the YAML front-matter block in CNCF skill files",
   "type": "object",
-  "required": ["id", "title", "description", "version", "domain", "cncf_requirement", "applies_to", "template_source"],
+  "required": ["id", "description"],
   "additionalProperties": false,
   "properties": {
     "id": {
@@ -12,36 +12,11 @@
       "pattern": "^_?[a-z][a-z0-9-]*$",
       "description": "Stable kebab-case identifier (leading underscore allowed for meta-skills)"
     },
-    "title": {
-      "type": "string",
-      "minLength": 5
-    },
     "description": {
       "type": "string",
       "minLength": 20,
       "maxLength": 1024,
       "description": "Third-person summary: what this skill does and when to use it. No first-person pronouns."
-    },
-    "version": {
-      "type": "string",
-      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
-      "description": "Semantic version"
-    },
-    "domain": {
-      "type": "string",
-      "enum": ["contribution", "governance", "security", "lifecycle"]
-    },
-    "cncf_requirement": {
-      "type": "string",
-      "enum": ["required", "encouraged", "optional"]
-    },
-    "applies_to": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "string",
-        "enum": ["sandbox", "incubating", "graduated"]
-      }
     },
     "template_source": {
       "type": "string",
@@ -50,12 +25,6 @@
     "how_to_guide": {
       "type": "string",
       "format": "uri"
-    },
-    "tags": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     },
     "mcp_servers": {
       "type": "array",

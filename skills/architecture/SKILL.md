@@ -1,23 +1,13 @@
 ---
+description: Creates or updates ARCHITECTURE.md documenting the project's design,
+  components, and technical decisions. Use when a CNCF project lacks an architecture
+  document or needs to update its technical overview.
 id: architecture
-title: "Create or Update an ARCHITECTURE.md"
-description: "Creates or updates ARCHITECTURE.md documenting the project's design, components, and technical decisions. Use when a CNCF project lacks an architecture document or needs to update its technical overview."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://contribute.cncf.io/maintainers/templates/"
-tags:
-  - architecture
-  - documentation
-  - design
-  - onboarding
 mcp_servers:
-  - id: github
-    description: "List repo structure, check file existence, create ARCHITECTURE.md"
-    url: "https://github.com/github/mcp-server-github"
+- description: List repo structure, check file existence, create ARCHITECTURE.md
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://contribute.cncf.io/maintainers/templates/
 ---
 
 Create or update `ARCHITECTURE.md` explaining the project's major components, data flow,

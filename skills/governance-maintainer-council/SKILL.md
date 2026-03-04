@@ -1,24 +1,14 @@
 ---
+description: Creates or updates maintainer-council GOVERNANCE.md defining council
+  structure, quorum rules, and decision-making process. Use when a CNCF project uses
+  a maintainer council model for governance.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/governance/
 id: governance-maintainer-council
-title: "Set Up Maintainer Council Governance (GOVERNANCE-maintainer.md)"
-description: "Creates or updates maintainer-council GOVERNANCE.md defining council structure, quorum rules, and decision-making process. Use when a CNCF project uses a maintainer council model for governance."
-version: "2.0.0"
-domain: governance
-cncf_requirement: encouraged
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/GOVERNANCE-maintainer.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/governance/"
-tags:
-  - governance
-  - maintainers
-  - decision-making
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, create or update GOVERNANCE-maintainer.md"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, create or update GOVERNANCE-maintainer.md
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/project-template/blob/main/GOVERNANCE-maintainer.md
 ---
 
 Create or update `GOVERNANCE-maintainer.md` with the maintainer council structure,

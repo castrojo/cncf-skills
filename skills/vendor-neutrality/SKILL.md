@@ -1,27 +1,17 @@
 ---
+description: Adds a vendor-neutral governance statement ensuring the project is not
+  controlled by a single vendor. Use when a CNCF project needs to assert vendor-neutral
+  governance for compliance with CNCF sandbox requirements.
+how_to_guide: https://contribute.cncf.io/maintainers/community/vendor-neutrality/
 id: vendor-neutrality
-title: "Add a Vendor-Neutral Governance Statement"
-description: "Adds a vendor-neutral governance statement ensuring the project is not controlled by a single vendor. Use when a CNCF project needs to assert vendor-neutral governance for compliance with CNCF sandbox requirements."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://contribute.cncf.io/projects/best-practices/governance/"
-how_to_guide: "https://contribute.cncf.io/maintainers/community/vendor-neutrality/"
-tags:
-  - governance
-  - vendor-neutrality
-  - graduation
-  - cncf-required
 mcp_servers:
-  - id: github
-    description: "Check file existence, create files, open PRs"
-    url: "https://github.com/github/mcp-server-github"
-  - id: cncf-landscape
-    description: "Verify project maturity level and landscape metadata"
-    url: "https://github.com/cncf/landscape-mcp"
+- description: Check file existence, create files, open PRs
+  id: github
+  url: https://github.com/github/mcp-server-github
+- description: Verify project maturity level and landscape metadata
+  id: cncf-landscape
+  url: https://github.com/cncf/landscape-mcp
+template_source: https://contribute.cncf.io/projects/best-practices/governance/
 ---
 
 Audit the project's vendor diversity and add an explicit vendor-neutral governance

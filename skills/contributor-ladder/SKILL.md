@@ -1,24 +1,14 @@
 ---
+description: Creates or updates CONTRIBUTOR_LADDER.md defining roles, responsibilities,
+  and advancement paths from contributor to maintainer. Use when a CNCF project wants
+  to formalize how contributors grow and earn commit rights.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/governance/
 id: contributor-ladder
-title: "Create or Update a CONTRIBUTOR_LADDER.md"
-description: "Creates or updates CONTRIBUTOR_LADDER.md defining roles, responsibilities, and advancement paths from contributor to maintainer. Use when a CNCF project wants to formalize how contributors grow and earn commit rights."
-version: "2.0.0"
-domain: governance
-cncf_requirement: encouraged
-applies_to:
-  - sandbox
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/project-template/blob/main/CONTRIBUTOR_LADDER.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/governance/"
-tags:
-  - governance
-  - contributor-growth
-  - roles
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, create or update CONTRIBUTOR_LADDER.md"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, create or update CONTRIBUTOR_LADDER.md
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/project-template/blob/main/CONTRIBUTOR_LADDER.md
 ---
 
 Create or update `CONTRIBUTOR_LADDER.md` with the project's roles, responsibilities,

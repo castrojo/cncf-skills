@@ -1,23 +1,15 @@
 ---
+description: Creates or updates an incident response plan covering detection, triage,
+  communication, and post-incident review. Use when a CNCF project needs a documented
+  process for handling security incidents or service outages.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/security/
 id: incident-response
-title: "Create or Update an Incident Response Plan"
-description: "Creates or updates an incident response plan covering detection, triage, communication, and post-incident review. Use when a CNCF project needs a documented process for handling security incidents or service outages."
-version: "2.0.0"
-domain: security
-cncf_requirement: encouraged
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/tag-security/blob/main/project-resources/templates/INCIDENT-RESPONSE.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/security/"
-tags:
-  - security
-  - incident-response
-  - vulnerability
 mcp_servers:
-  - id: github
-    description: "Check file existence, fetch template, verify advisory draft access, create incident response doc"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, fetch template, verify advisory draft access,
+    create incident response doc
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/tag-security/blob/main/project-resources/templates/INCIDENT-RESPONSE.md
 ---
 
 Create or update the incident response plan with the step-by-step process for

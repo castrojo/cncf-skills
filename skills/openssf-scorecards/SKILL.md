@@ -1,28 +1,17 @@
 ---
+description: Sets up the OpenSSF Scorecard GitHub Action for automated supply-chain
+  security scoring. Use when a CNCF project needs to configure continuous security
+  posture measurement.
+how_to_guide: https://securityscorecards.dev
 id: openssf-scorecards
-title: "Set Up the OpenSSF Scorecard GitHub Action"
-description: "Sets up the OpenSSF Scorecard GitHub Action for automated supply-chain security scoring. Use when a CNCF project needs to configure continuous security posture measurement."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/ossf/scorecard-action"
-how_to_guide: "https://securityscorecards.dev"
-tags:
-  - security
-  - openssf
-  - scorecards
-  - ci
-  - clomonitor
 mcp_servers:
-  - id: github
-    description: "Check file existence, create files, open PRs"
-    url: "https://github.com/github/mcp-server-github"
-  - id: cncf-landscape
-    description: "Verify project maturity level and landscape metadata"
-    url: "https://github.com/cncf/landscape-mcp"
+- description: Check file existence, create files, open PRs
+  id: github
+  url: https://github.com/github/mcp-server-github
+- description: Verify project maturity level and landscape metadata
+  id: cncf-landscape
+  url: https://github.com/cncf/landscape-mcp
+template_source: https://github.com/ossf/scorecard-action
 ---
 
 Add the `ossf/scorecard-action` GitHub Actions workflow to your repository so that

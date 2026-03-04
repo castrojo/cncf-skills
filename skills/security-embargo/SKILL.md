@@ -1,23 +1,14 @@
 ---
+description: Sets up an embargo policy document and draft notice templates for coordinated
+  vulnerability disclosure. Use when a CNCF project needs pre-disclosure coordination
+  agreements and embargo notification templates.
+how_to_guide: https://contribute.cncf.io/projects/best-practices/security/
 id: security-embargo
-title: "Set Up Embargo Policy and Draft Embargo Notices"
-description: "Sets up an embargo policy document and draft notice templates for coordinated vulnerability disclosure. Use when a CNCF project needs pre-disclosure coordination agreements and embargo notification templates."
-version: "2.0.0"
-domain: security
-cncf_requirement: optional
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/tag-security/blob/main/project-resources/templates/embargo-policy.md"
-how_to_guide: "https://contribute.cncf.io/projects/best-practices/security/"
-tags:
-  - security
-  - embargo
-  - disclosure
 mcp_servers:
-  - id: github
-    description: "Check file existence, create or update embargo policy, open PRs"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, create or update embargo policy, open PRs
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/tag-security/blob/main/project-resources/templates/embargo-policy.md
 ---
 
 Create and maintain the security embargo policy for downstream distributors, and draft

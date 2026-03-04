@@ -1,24 +1,17 @@
 ---
+description: Audits a CNCF project against all graduation Due Diligence criteria and
+  identifies gaps. Use when a project is preparing to apply for CNCF graduation or
+  wants a readiness assessment before submitting.
+how_to_guide: https://github.com/cncf/toc/blob/main/process/graduation_due_diligence.md
 id: graduation-checklist
-title: "CNCF Graduation Readiness Checklist"
-description: "Audits a CNCF project against all graduation Due Diligence criteria and identifies gaps. Use when a project is preparing to apply for CNCF graduation or wants a readiness assessment before submitting."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: optional
-applies_to: [incubating, graduated]
-template_source: "https://github.com/cncf/toc/blob/main/process/graduation_criteria.md"
-how_to_guide: "https://github.com/cncf/toc/blob/main/process/graduation_due_diligence.md"
-tags:
-  - graduation
-  - checklist
-  - due-diligence
 mcp_servers:
-  - id: cncf-landscape
-    description: "Verify project maturity level and landscape metadata"
-    url: "https://github.com/cncf/landscape-mcp"
-  - id: github
-    description: "Check file existence across all required artifacts"
-    url: "https://github.com/github/mcp-server-github"
+- description: Verify project maturity level and landscape metadata
+  id: cncf-landscape
+  url: https://github.com/cncf/landscape-mcp
+- description: Check file existence across all required artifacts
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/toc/blob/main/process/graduation_criteria.md
 ---
 
 Use this skill to audit a project for CNCF graduation readiness. Each criterion maps to

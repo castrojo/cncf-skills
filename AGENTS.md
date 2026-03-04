@@ -54,23 +54,26 @@ just check   # validates all skill front-matter against the schema
 Every `SKILL.md` must have a YAML front-matter block and a body. Both are validated
 by `just check`. A skill that fails validation will not be merged.
 
-### Required front-matter fields
+### Front-matter fields
+
+Claude requires two fields: `name` and `description`. This repo uses `id` in place of
+`name`. That is the entire required schema.
+
+**Before adding a front-matter field, ask:** "Does an agent need this to use the skill?"
+If no, do not add the field. Metadata that helps humans browse the repo belongs in the
+skill body, not the front-matter.
 
 ```yaml
 ---
-id: kebab-case-id          # stable identifier; leading underscore allowed for meta-skills
-title: "Human-readable title"
-description: "Third-person summary of what the skill does and when an agent should invoke it. No first-person pronouns (I, You). Between 20 and 1024 characters."
-version: "1.0.0"           # semantic version
-domain: contribution       # one of: contribution | governance | security | lifecycle
-cncf_requirement: required # one of: required | encouraged | optional
-applies_to:                # one or more of: sandbox | incubating | graduated
-  - sandbox
-template_source: "https://..." # canonical CNCF template URL
+id: kebab-case-id     # required — stable identifier (leading underscore allowed for meta-skills)
+description: "..."    # required — third-person, 20–1024 chars, what + when
 ---
 ```
 
-Optional fields: `how_to_guide` (URI), `tags` (string array), `mcp_servers` (see schema).
+Optional fields (only include if the skill actively uses them):
+- `template_source` — URI of the canonical CNCF template
+- `how_to_guide` — URI of the CNCF how-to guide
+- `mcp_servers` — list of MCP servers the skill uses (see schema for structure)
 
 ### `description` field rules (enforced by validator)
 
@@ -108,36 +111,6 @@ missing a security policy or needs to update reporting instructions.
 | Rule | Detail |
 |---|---|
 | Max 500 lines | Keeps skills context-efficient for agents with limited windows. |
-| Required sections (in order) | See below. |
-
-### Required body sections (in order)
-
-```markdown
-## When to use this skill
-<positive conditions — when the agent SHOULD invoke this>
-
-Do NOT use when:
-<negative conditions — when the agent should NOT invoke this>
-
-## What this skill does
-<concise description of the outputs and actions>
-
-## Steps
-1. Step one
-2. Step two
-...
-
-## Validation checklist
-- [ ] Item one
-- [ ] Item two
-
-## Common mistakes
-**Mistake title** — explanation of the mistake and how to avoid it.
-```
-
-All six sections must be present and in the order shown above.
-The "Do NOT use when:" block is inline under the `## When to use this skill` heading,
-not a separate heading.
 
 ### Checklist for new skills
 
@@ -145,10 +118,6 @@ Before running `just check`, confirm:
 
 - [ ] `id` is kebab-case, unique across all skills in `skills/`
 - [ ] `description` is third-person, 20–1024 chars, includes what + when
-- [ ] `domain` and `cncf_requirement` use the allowed enum values
-- [ ] `applies_to` lists at least one maturity level
-- [ ] `template_source` is a valid HTTPS URI
-- [ ] Body has all six required sections in the correct order
 - [ ] Body is ≤500 lines
 - [ ] `just check` passes: 0 errors
 

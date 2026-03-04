@@ -1,24 +1,14 @@
 ---
+description: Completes the CNCF TAG Security self-assessment questionnaire documenting
+  a project's security posture, threat model, and practices. Use when preparing for
+  a TAG Security review or graduation application.
+how_to_guide: https://tag-security.cncf.io/assessments/guide/
 id: security-self-assessment
-title: "Complete a TAG Security Self-Assessment"
-description: "Completes the CNCF TAG Security self-assessment questionnaire documenting a project's security posture, threat model, and practices. Use when preparing for a TAG Security review or graduation application."
-version: "2.0.0"
-domain: lifecycle
-cncf_requirement: required
-applies_to:
-  - incubating
-  - graduated
-template_source: "https://github.com/cncf/tag-security/blob/main/assessments/guide/self-assessment.md"
-how_to_guide: "https://tag-security.cncf.io/assessments/guide/"
-tags:
-  - security
-  - self-assessment
-  - tag-security
-  - graduation
 mcp_servers:
-  - id: github
-    description: "Check file existence, open PRs to cncf/tag-security"
-    url: "https://github.com/github/mcp-server-github"
+- description: Check file existence, open PRs to cncf/tag-security
+  id: github
+  url: https://github.com/github/mcp-server-github
+template_source: https://github.com/cncf/tag-security/blob/main/assessments/guide/self-assessment.md
 ---
 
 Guide the project team through writing and submitting a TAG Security self-assessment —
