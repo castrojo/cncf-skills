@@ -51,7 +51,12 @@ Do NOT use when:
 
 5. **Ensure consistency** with root-level approvers in OWNERS / CODEOWNERS.
 
-6. **Notify CNCF staff** if this is the initial creation by updating:
+6. **Add an Emeritus section** for maintainers who are no longer active.
+   Moving inactive maintainers to an Emeritus section (rather than deleting them)
+   preserves history and is the principled path recommended by CNCF TAG Contributor
+   Strategy. Define emeritus criteria in GOVERNANCE.md first if they do not exist.
+
+7. **Notify CNCF staff** if this is the initial creation by updating:
    `https://github.com/cncf/foundation/blob/master/project-maintainers.csv`
    ⚠️ CNCF cannot include the project in official maintainer counts until this CSV is updated.
 

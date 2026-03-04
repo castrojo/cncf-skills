@@ -53,6 +53,17 @@ Do NOT use when:
    the reporting channel documented there.
    ⚠️ If SECURITY.md says "email security@project.io" but no one monitors that address, disclosures are lost silently.
 
+6. **Test the reporting channel.**
+   Send a test message to the contact address and confirm at least one contact receives
+   and acknowledges it within 24 hours. Document the test date.
+   Repeat this test at least annually — reporting channels silently break when email
+   aliases go unchecked after personnel changes.
+
+7. **Set a calendar reminder to review contacts annually.**
+   Security contact lists go stale faster than maintainer lists because security roles
+   are often informal. Add a recurring review to the project's release calendar or
+   governance meeting agenda.
+
 ## Checklist
 
 - [ ] At least 2 security contacts listed

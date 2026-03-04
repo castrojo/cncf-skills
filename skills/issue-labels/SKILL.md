@@ -56,8 +56,16 @@ Do NOT use when:
 
 4. **Tag at least 2-3 existing issues** with the new labels.
    ⚠️ Labels with zero tagged issues send no signal to new contributors; tag immediately.
+   Choose issues that are self-contained, have clear acceptance criteria, and do not
+   require deep knowledge of the codebase.
 
-5. **Verify labels appear in the GitHub UI** and match the URLs used in CONTRIBUTING.md.
+5. **Add a triage label set** (optional but recommended) for tracking issue status:
+   - `triage/accepted` — confirmed valid issue, ready to work on
+   - `triage/needs-information` — waiting on reporter response
+   - `triage/wontfix` — acknowledged but out of scope
+   These complement `good first issue` by keeping the issue queue actionable.
+
+6. **Verify labels appear in the GitHub UI** and match the URLs used in CONTRIBUTING.md.
 
 ## Checklist
 
