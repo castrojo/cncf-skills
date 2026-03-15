@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.schema.json",
+  "name": "cncf-skills",
+  "build": {
+    "dockerfile": "Containerfile",
+    "context": "."
+  },
+
+  "runArgs": [
+    "--userns=keep-id",
+    "--security-opt=label=disable"
+  ],
+  "containerUser": "vscode",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/cncf-skills,type=bind,Z",
+  "workspaceFolder": "/workspaces/cncf-skills",
+
+  "postCreateCommand": "pip install jsonschema pyyaml",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}
